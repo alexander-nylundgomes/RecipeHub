@@ -1,0 +1,4 @@
+
+@for(recipe of (recipes$ | async); track recipe.id){
+    <app-recipe-item [recipeItem]="recipe"></app-recipe-item>
+}

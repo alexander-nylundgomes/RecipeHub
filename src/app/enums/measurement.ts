@@ -1,0 +1,3 @@
+export enum Measurement{
+    LITER, DECILITER, MILLILITER, TEASPOON, TABLESPOON
+}

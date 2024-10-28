@@ -1,0 +1,4 @@
+.wrapper{
+    display: grid;
+    grid-template-rows: 65px minmax(0,1fr) 65px;
+}

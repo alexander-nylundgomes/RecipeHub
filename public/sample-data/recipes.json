@@ -1,0 +1,290 @@
+[
+    {
+        "title": "Spaghetti Bolognese",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "amount": 200,
+                "measurement": "grams"
+            },
+            {
+                "name": "Ground Beef",
+                "amount": 300,
+                "measurement": "grams"
+            },
+            {
+                "name": "Tomato Sauce",
+                "amount": 150,
+                "measurement": "grams"
+            },
+            {
+                "name": "Onion",
+                "amount": 1,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Garlic",
+                "amount": 2,
+                "measurement": "pieces"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook pasta",
+                "longText": "Boil water in a pot, add salt, and cook the spaghetti until al dente."
+            },
+            {
+                "shortText": "Prepare sauce",
+                "longText": "In a pan, saut\u00e9 onions and garlic, then add ground beef and cook until browned. Add tomato sauce and simmer."
+            },
+            {
+                "shortText": "Combine",
+                "longText": "Mix the cooked spaghetti with the sauce and serve hot."
+            }
+        ]
+    },
+    {
+        "title": "Pancakes",
+        "ingredients": [
+            {
+                "name": "Flour",
+                "amount": 200,
+                "measurement": "grams"
+            },
+            {
+                "name": "Milk",
+                "amount": 300,
+                "measurement": "milliliters"
+            },
+            {
+                "name": "Eggs",
+                "amount": 2,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Sugar",
+                "amount": 2,
+                "measurement": "tablespoons"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare batter",
+                "longText": "In a bowl, mix flour, milk, eggs, and sugar until smooth."
+            },
+            {
+                "shortText": "Cook pancakes",
+                "longText": "Heat a pan over medium heat and pour in a ladle of batter. Cook until bubbles form on the surface, flip, and cook until golden brown."
+            },
+            {
+                "shortText": "Serve",
+                "longText": "Serve pancakes with syrup or your favorite toppings."
+            }
+        ]
+    },
+    {
+        "title": "Chicken Curry",
+        "ingredients": [
+            {
+                "name": "Chicken Breast",
+                "amount": 400,
+                "measurement": "grams"
+            },
+            {
+                "name": "Coconut Milk",
+                "amount": 200,
+                "measurement": "milliliters"
+            },
+            {
+                "name": "Curry Powder",
+                "amount": 2,
+                "measurement": "tablespoons"
+            },
+            {
+                "name": "Onion",
+                "amount": 1,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Garlic",
+                "amount": 2,
+                "measurement": "pieces"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare ingredients",
+                "longText": "Chop the onion and garlic, and cut chicken into bite-sized pieces."
+            },
+            {
+                "shortText": "Cook chicken",
+                "longText": "In a pan, saut\u00e9 onion and garlic, then add chicken and cook until no longer pink."
+            },
+            {
+                "shortText": "Add curry",
+                "longText": "Stir in curry powder and coconut milk. Simmer until chicken is cooked through and sauce thickens."
+            }
+        ]
+    },
+    {
+        "title": "Omelette",
+        "ingredients": [
+            {
+                "name": "Eggs",
+                "amount": 3,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Milk",
+                "amount": 50,
+                "measurement": "milliliters"
+            },
+            {
+                "name": "Cheese",
+                "amount": 50,
+                "measurement": "grams"
+            },
+            {
+                "name": "Salt",
+                "amount": 1,
+                "measurement": "teaspoon"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Beat eggs",
+                "longText": "Whisk eggs and milk together in a bowl. Add a pinch of salt."
+            },
+            {
+                "shortText": "Cook omelette",
+                "longText": "Heat a pan and pour in the mixture. Sprinkle cheese on top and cook until eggs are set."
+            },
+            {
+                "shortText": "Fold and serve",
+                "longText": "Fold the omelette in half and serve immediately."
+            }
+        ]
+    },
+    {
+        "title": "Tomato Soup",
+        "ingredients": [
+            {
+                "name": "Tomatoes",
+                "amount": 500,
+                "measurement": "grams"
+            },
+            {
+                "name": "Onion",
+                "amount": 1,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Garlic",
+                "amount": 2,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Basil",
+                "amount": 5,
+                "measurement": "grams"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook tomatoes",
+                "longText": "Chop tomatoes, onion, and garlic, then cook in a pot until soft."
+            },
+            {
+                "shortText": "Blend",
+                "longText": "Use a blender to puree the cooked ingredients until smooth."
+            },
+            {
+                "shortText": "Season and serve",
+                "longText": "Add basil and season to taste with salt and pepper."
+            }
+        ]
+    },
+    {
+        "title": "Caesar Salad",
+        "ingredients": [
+            {
+                "name": "Romaine Lettuce",
+                "amount": 200,
+                "measurement": "grams"
+            },
+            {
+                "name": "Caesar Dressing",
+                "amount": 100,
+                "measurement": "grams"
+            },
+            {
+                "name": "Croutons",
+                "amount": 50,
+                "measurement": "grams"
+            },
+            {
+                "name": "Parmesan Cheese",
+                "amount": 30,
+                "measurement": "grams"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare ingredients",
+                "longText": "Chop lettuce and grate parmesan cheese."
+            },
+            {
+                "shortText": "Toss salad",
+                "longText": "In a bowl, combine lettuce, dressing, croutons, and parmesan."
+            },
+            {
+                "shortText": "Serve",
+                "longText": "Serve immediately after tossing."
+            }
+        ]
+    },
+    {
+        "title": "Beef Tacos",
+        "ingredients": [
+            {
+                "name": "Ground Beef",
+                "amount": 300,
+                "measurement": "grams"
+            },
+            {
+                "name": "Taco Shells",
+                "amount": 8,
+                "measurement": "pieces"
+            },
+            {
+                "name": "Cheese",
+                "amount": 50,
+                "measurement": "grams"
+            },
+            {
+                "name": "Lettuce",
+                "amount": 50,
+                "measurement": "grams"
+            },
+            {
+                "name": "Salsa",
+                "amount": 100,
+                "measurement": "grams"
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook beef",
+                "longText": "In a pan, cook ground beef until browned."
+            },
+            {
+                "shortText": "Assemble tacos",
+                "longText": "Fill taco shells with beef, cheese, lettuce, and salsa."
+            },
+            {
+                "shortText": "Serve",
+                "longText": "Serve tacos immediately with additional salsa on the side."
+            }
+        ]
+    }
+]
