@@ -1,0 +1,25 @@
+<div class="recipe-wrapper d-flex flex-column p-3 row-gap-3 ">
+
+	<div class="image w-100">
+		<button type="button" (click)="router.navigate([''])" class=" m-2 btn btn-light btn-sm align-self-start border">
+			<i class="bi bi-arrow-left fs-6 p-0"></i>
+		</button>
+	</div>
+
+	<h2 class="rounded-2 border p-3 m-0 shadow-sm">{{ (recipe$ | async)?.title }}</h2>
+
+	<ul class="list-group">
+		@for(ingredient of (recipe$ | async)?.ingredients ; track $index){
+			<li class="list-group-item d-flex justify-content-between shadow-sm">
+				<p class="m-0">{{ ingredient.name }}</p>
+				<p class="m-0 ml-a">{{ ingredient.amount }} {{ ingredient.measurement }} </p>
+			</li>
+		}
+	  </ul>
+
+	<div class="steps d-flex flex-column row-gap-2">
+		@for(step of (recipe$ | async)?.steps ; track $index){
+			<p class="p-2 border m-0 rounded-2 shadow-sm">{{ step.longText }}</p>
+		} 
+	</div>
+</div>

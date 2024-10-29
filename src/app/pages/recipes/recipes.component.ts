@@ -7,6 +7,7 @@ import { RecipeService } from '../../services/recipe.service';
 import { RecipeActions, RecipeApiActions } from '../../state/recipes/recipes.actions';
 import { RecipeItemComponent } from '../../components/recipe-item/recipe-item.component';
 import { selectRecipes } from '../../state/recipes/recipes.selectors';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipes',
@@ -20,6 +21,7 @@ export class RecipesComponent implements OnInit {
 
   constructor(
     private store: Store,
+    public router: Router
   ){
 
   }

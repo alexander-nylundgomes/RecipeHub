@@ -1,4 +1,6 @@
 
-@for(recipe of (recipes$ | async); track recipe.id){
-    <app-recipe-item [recipeItem]="recipe"></app-recipe-item>
-}
+<div class="recipe-wrapper p-3 d-flex flex-column row-gap-2">
+    @for(recipe of (recipes$ | async); track recipe.id){
+        <app-recipe-item class="pointer" (click)="router.navigate(['recipe', recipe.id])"  [recipeItem]="recipe"></app-recipe-item>
+    }
+</div>
