@@ -2,20 +2,16 @@ import { createReducer, on } from "@ngrx/store";
 import { Recipe } from "../../interfaces/recipe";
 import { RecipeActions, RecipeApiActions } from "./recipes.actions";
 
-export const initialRecipeState: Array<Recipe> = [];
+export const initialRecipeState: Recipe[] = [];
 
 export const recipeReducer = createReducer(
     initialRecipeState,
-    on(RecipeActions.addRecipe, (state, { recipe }) => { return [...state, recipe] }),
-    on(RecipeActions.removeRecipe, (state, { recipeId }) => {
-        const index = state.findIndex(recipe => recipe.id == recipeId);
-        state.splice(index, 1);
-        return state;
-    }),
-    on(RecipeActions.updateRecipe, (state, { recipe }) => {
-        const index = state.findIndex(_recipe => _recipe.id == recipe.id);
-        if(index) state[index] = recipe;
-        return state;
-    }),
-    on(RecipeApiActions.loadRecipesSuccess, (_state, { recipes }) => recipes)
-)
+    on(RecipeActions.addRecipe, (state, { recipe }) => [...state, recipe]),
+    on(RecipeActions.removeRecipe, (state, { id }) => 
+        state.filter(recipe => recipe.id !== id)
+    ),
+    on(RecipeActions.updateRecipe, (state, { recipe }) => 
+        state.map(r => r.id === recipe.id ? recipe : r)
+    ),
+    on(RecipeApiActions.loadRecipesSuccess, (_, { recipes }) => [...recipes])
+);

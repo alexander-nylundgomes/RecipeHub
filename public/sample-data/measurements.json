@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "measurementType": "WEIGHT",
+        "label": "grams"
+    },
+    {
+        "id": 7,
+        "measurementType": "VOLUME",
+        "label": "milliliters"
+    },
+    {
+        "id": 4,
+        "measurementType": "PIECE",
+        "label": "pieces"
+    },
+    {
+        "id": 9,
+        "measurementType": "VOLUME",
+        "label": "tablespoons"
+    },
+    {
+        "id": 18,
+        "measurementType": "VOLUME",
+        "label": "teaspoon"
+    }
+]

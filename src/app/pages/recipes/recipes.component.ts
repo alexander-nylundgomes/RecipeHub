@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
-import { Observable, take } from 'rxjs';
+import { EMPTY, Observable, take } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
 import { RecipeService } from '../../services/recipe.service';
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
   styleUrl: './recipes.component.scss'
 })
 export class RecipesComponent implements OnInit {
-  recipes$!: Observable<ReadonlyArray<Recipe>>;
+  recipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
 
   constructor(
     private store: Store,
@@ -27,7 +27,6 @@ export class RecipesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(RecipeActions.loadRecipes());
     this.recipes$ = this.store.select(selectRecipes);
   }
 }

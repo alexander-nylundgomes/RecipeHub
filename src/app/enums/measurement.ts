@@ -1,3 +1,3 @@
-export enum Measurement{
-    LITER, DECILITER, MILLILITER, TEASPOON, TABLESPOON
+export enum MeasurementType{
+    VOLUME, PIECE, WEIGHT
 }

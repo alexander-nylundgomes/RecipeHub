@@ -6,27 +6,47 @@
             {
                 "name": "Spaghetti",
                 "amount": 200,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Ground Beef",
                 "amount": 300,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 2,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Tomato Sauce",
                 "amount": 150,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Onion",
                 "amount": 1,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 4,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Garlic",
                 "amount": 2,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 5,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             }
         ],
         "steps": [
@@ -36,7 +56,7 @@
             },
             {
                 "shortText": "Prepare sauce",
-                "longText": "In a pan, saut\u00e9 onions and garlic, then add ground beef and cook until browned. Add tomato sauce and simmer."
+                "longText": "In a pan, sauté onions and garlic, then add ground beef and cook until browned. Add tomato sauce and simmer."
             },
             {
                 "shortText": "Combine",
@@ -51,22 +71,38 @@
             {
                 "name": "Flour",
                 "amount": 200,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Milk",
                 "amount": 300,
-                "measurement": "milliliters"
+                "measurement": {
+                    "id": 7,
+                    "measurementType": "VOLUME",
+                    "label": "milliliters"
+                }
             },
             {
                 "name": "Eggs",
                 "amount": 2,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 8,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Sugar",
                 "amount": 2,
-                "measurement": "tablespoons"
+                "measurement": {
+                    "id": 9,
+                    "measurementType": "VOLUME",
+                    "label": "tablespoons"
+                }
             }
         ],
         "steps": [
@@ -91,27 +127,47 @@
             {
                 "name": "Chicken Breast",
                 "amount": 400,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 10,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Coconut Milk",
                 "amount": 200,
-                "measurement": "milliliters"
+                "measurement": {
+                    "id": 11,
+                    "measurementType": "VOLUME",
+                    "label": "milliliters"
+                }
             },
             {
                 "name": "Curry Powder",
                 "amount": 2,
-                "measurement": "tablespoons"
+                "measurement": {
+                    "id": 12,
+                    "measurementType": "VOLUME",
+                    "label": "tablespoons"
+                }
             },
             {
                 "name": "Onion",
                 "amount": 1,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 13,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Garlic",
                 "amount": 2,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 14,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             }
         ],
         "steps": [
@@ -121,7 +177,7 @@
             },
             {
                 "shortText": "Cook chicken",
-                "longText": "In a pan, saut\u00e9 onion and garlic, then add chicken and cook until no longer pink."
+                "longText": "In a pan, sauté onion and garlic, then add chicken and cook until no longer pink."
             },
             {
                 "shortText": "Add curry",
@@ -136,22 +192,38 @@
             {
                 "name": "Eggs",
                 "amount": 3,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 15,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Milk",
                 "amount": 50,
-                "measurement": "milliliters"
+                "measurement": {
+                    "id": 16,
+                    "measurementType": "VOLUME",
+                    "label": "milliliters"
+                }
             },
             {
                 "name": "Cheese",
                 "amount": 50,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 17,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Salt",
                 "amount": 1,
-                "measurement": "teaspoon"
+                "measurement": {
+                    "id": 18,
+                    "measurementType": "VOLUME",
+                    "label": "teaspoon"
+                }
             }
         ],
         "steps": [
@@ -176,22 +248,38 @@
             {
                 "name": "Tomatoes",
                 "amount": 500,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 19,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Onion",
                 "amount": 1,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 20,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Garlic",
                 "amount": 2,
-                "measurement": "pieces"
+                "measurement": {
+                    "id": 21,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
             },
             {
                 "name": "Basil",
                 "amount": 5,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 22,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             }
         ],
         "steps": [
@@ -216,22 +304,38 @@
             {
                 "name": "Romaine Lettuce",
                 "amount": 200,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 23,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Caesar Dressing",
                 "amount": 100,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 24,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Croutons",
                 "amount": 50,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 25,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             },
             {
                 "name": "Parmesan Cheese",
                 "amount": 30,
-                "measurement": "grams"
+                "measurement": {
+                    "id": 26,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
             }
         ],
         "steps": [
@@ -253,45 +357,6 @@
         "title": "Beef Tacos",
         "id": 7,
         "ingredients": [
-            {
-                "name": "Ground Beef",
-                "amount": 300,
-                "measurement": "grams"
-            },
-            {
-                "name": "Taco Shells",
-                "amount": 8,
-                "measurement": "pieces"
-            },
-            {
-                "name": "Cheese",
-                "amount": 50,
-                "measurement": "grams"
-            },
-            {
-                "name": "Lettuce",
-                "amount": 50,
-                "measurement": "grams"
-            },
-            {
-                "name": "Salsa",
-                "amount": 100,
-                "measurement": "grams"
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Cook beef",
-                "longText": "In a pan, cook ground beef until browned."
-            },
-            {
-                "shortText": "Assemble tacos",
-                "longText": "Fill taco shells with beef, cheese, lettuce, and salsa."
-            },
-            {
-                "shortText": "Serve",
-                "longText": "Serve tacos immediately with additional salsa on the side."
-            }
         ]
     }
 ]

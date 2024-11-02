@@ -5,7 +5,7 @@ export const RecipeActions = createActionGroup({
     source: 'Recipes',
     events: {
         'Add recipe': props<{ recipe: Recipe }>(),
-        'Remove recipe': props<{ recipeId: number }>(),
+        'Remove recipe': props<{ id: number }>(),
         'Update recipe': props<{ recipe: Recipe }>(),
         'Load recipes': emptyProps
     }

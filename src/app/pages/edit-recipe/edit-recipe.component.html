@@ -1,0 +1,39 @@
+<form [formGroup]="form" (submit)="onSubmit()" class="recipe-wrapper d-flex flex-column p-3 row-gap-3 ">
+
+	<div class="image w-100 p-2 d-flex justify-content-between">
+		<button type="button" (click)="location.back()" class="btn btn-light btn-sm align-self-start border">
+			<i class="bi bi-arrow-left fs-6 p-0"></i>
+		</button>
+	</div>
+
+	<div class="title rounded-2 border p-3 shadow-sm">
+		<input class="form-control form-control-lg" formControlName="title" type="text">
+	</div>
+
+	<ul class="list-group" formArrayName="ingredients">
+		@for(ingredient of ingredients.controls; track $index; let ingredientIndex = $index){
+			<li class="list-group-item d-flex justify-content-between shadow-sm column-gap-2" [formGroupName]="ingredientIndex">
+
+				<input class="form-control form-control-sm" formControlName="name" type="text">
+				
+				<input class="form-control form-control-sm" formControlName="amount" type="text">
+
+				<select class="form-select form-select-sm" formControlName="measurement" aria-label="Small select example">
+					@for(measurement of (measurements$ | async); track $index;){
+						<option>{{ measurement.label }}</option>
+					}
+				</select>
+			</li>
+		}
+	</ul>
+
+	<div formArrayName="steps" class="steps d-flex flex-column row-gap-2">
+		@for(step of steps.controls; track $index; let stepIndex = $index){
+			<div class="p-2 border rounded-2 shadow-sm" [formGroupName]="stepIndex">
+				<textarea class="m-0 form-control" formControlName="longText" rows="3"></textarea>
+			</div>
+		} 
+	</div>
+
+	<button class="btn btn-primary" type="submit">Save</button>
+</form>
