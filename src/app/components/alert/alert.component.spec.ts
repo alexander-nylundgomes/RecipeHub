@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AlertComponent } from './alert.component';
+import { Alert } from '../../interfaces/alert';
+import { AlertType } from '../../enums/alert-type';
+
+const inputAlert: Alert = {message: "Testing...", type: AlertType.SUCCESS, id: -1}
 
 describe('AlertComponent', () => {
   let component: AlertComponent;
@@ -14,6 +18,7 @@ describe('AlertComponent', () => {
 
     fixture = TestBed.createComponent(AlertComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('alert', inputAlert)
     fixture.detectChanges();
   });
 
