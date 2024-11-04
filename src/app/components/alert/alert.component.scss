@@ -1,0 +1,16 @@
+@keyframes alertAnimation{
+    from {
+        background-position: 100%;
+    }
+    to {
+        background-position: 0;
+    }
+}
+
+.alert-overlay{
+    background: linear-gradient(-90deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.1) 50%);
+    background-size: 200%;
+    animation: 3s alertAnimation linear;
+    left: 0;
+    top: 0;
+}

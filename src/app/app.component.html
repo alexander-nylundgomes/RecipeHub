@@ -1,7 +1,20 @@
 <div class="vw-100 vh-100 wrapper">
+
   <app-header></app-header>
-  <div class="content w-100 ">
-    <router-outlet></router-outlet>
+
+  <div class="content w-100 position-relative">
+    <div class="alert-overlay h-100 d-flex flex-column align-items-end w-100 position-absolute p-3" style="z-index: 100;pointer-events: none;box-sizing: border-box;">
+
+        @for (alert of alertService.alerts(); track alert.id) {
+            <app-alert [alert]="alert" (onRemove)="alertService.removeAlert(alert.id)"></app-alert>
+        }
+
+    </div>
+
+    <div class="router-outlet-wrapper w-100 ">
+      <router-outlet></router-outlet>
+    </div>
   </div>
+  
   <app-footer></app-footer>
 </div>

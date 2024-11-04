@@ -18,9 +18,9 @@
 				
 				<input class="form-control form-control-sm" formControlName="amount" type="text">
 
-				<select class="form-select form-select-sm" formControlName="measurement" aria-label="Small select example">
+				<select  [compareWith]="compareFn"  class="form-select form-select-sm" formControlName="measurement" >
 					@for(measurement of (measurements$ | async); track $index;){
-						<option>{{ measurement.label }}</option>
+						<option [ngValue]="measurement">{{ measurement.label }}</option>
 					}
 				</select>
 			</li>

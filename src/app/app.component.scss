@@ -3,7 +3,7 @@
     grid-template-rows: 65px minmax(0,1fr) 65px;
 }
 
-.content{
-    min-height: 100%;
+.router-outlet-wrapper{
+    height: 100%;
     overflow: auto;
 }

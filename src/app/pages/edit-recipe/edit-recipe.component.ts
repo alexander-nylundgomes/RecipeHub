@@ -17,6 +17,8 @@ import { selectRecipe } from '../../state/recipes/recipes.selectors';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
 import { AsyncPipe, Location } from '@angular/common';
 import { RecipeService } from '../../services/recipe.service';
+import { AlertService } from '../../services/alert.service';
+import { AlertType } from '../../enums/alert-type';
 
 @Component({
   selector: 'app-edit-recipe',
@@ -44,6 +46,7 @@ export class EditRecipeComponent implements OnInit {
     private store: Store,
     public router: Router,
     public location: Location,
+    private alertService: AlertService,
     private recipeService: RecipeService
   ) {}
 
@@ -79,14 +82,24 @@ export class EditRecipeComponent implements OnInit {
     if (this.form.valid) {
       this.recipe$.pipe(take(1)).subscribe((recipe) => {
         if (recipe) {
-          this.store.dispatch(RecipeActions.updateRecipe({ recipe: this.form.value }));
+
+          const updatedRecipe = this.form.value;
+          updatedRecipe.id = this.recipeId;
+          console.log(updatedRecipe)
+          this.store.dispatch(RecipeActions.updateRecipe({ recipe: updatedRecipe })) ;
+          this.alertService.addAlert({message: "Updated recipe!", type: AlertType.SUCCESS, id: -1});
+        }else{
+          this.alertService.addAlert({message: "Could not update recipe!", type: AlertType.DANGER, id: -1});
         }
       });
     }else{
-      
+      this.alertService.addAlert({message: "Not valid!", type: AlertType.DANGER, id: -1});
     }
   }
 
+  compareFn(c1: Measurement, c2: Measurement): boolean {
+    return c1 && c2 ? c1.id === c2.id : c1 === c2;
+}
 
   // Ingredients ------
   get ingredients(): FormArray{

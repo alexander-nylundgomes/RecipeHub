@@ -1,0 +1,12 @@
+
+<div class="alert-wrapper position-relative">
+
+    <div class="alert py-2 my-1" [ngClass]="{
+        'alert-primary': alert().type == AlertType.SUCCESS,
+        'alert-danger': alert().type == AlertType.DANGER,
+        'alert-warning': alert().type == AlertType.WARNING,
+    }" role="alert">{{ alert().message }}
+    </div>
+
+    <div (animationend)="onRemove.emit()" class="alert-overlay position-absolute w-100 h-100"></div>
+</div>
