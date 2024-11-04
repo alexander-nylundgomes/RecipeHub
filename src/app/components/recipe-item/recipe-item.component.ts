@@ -2,6 +2,9 @@ import { Component, input, InputSignal, Signal } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
 import { Store } from '@ngrx/store';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
+import { Router } from '@angular/router';
+import { AlertService } from '../../services/alert.service';
+import { AlertType } from '../../enums/alert-type';
 
 @Component({
   selector: 'app-recipe-item',
@@ -13,15 +16,18 @@ import { RecipeActions } from '../../state/recipes/recipes.actions';
 export class RecipeItemComponent {
   recipeItem: InputSignal<Recipe> = input.required();
   
-  constructor(private store: Store){
-
-  }
+  constructor(
+    private store: Store,
+    private router: Router,
+    private alertService: AlertService
+  ){}
 
   deleteRecipe(){
     this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipeItem().id}));
+    this.alertService.addAlert({ message: "Successfully deleted recipe!", type: AlertType.SUCCESS, id: -1});
   }
 
   editRecipe(){
-
+    this.router.navigate(['recipe', this.recipeItem().id, 'edit'])
   }
 }

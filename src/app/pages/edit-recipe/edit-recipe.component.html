@@ -11,8 +11,8 @@
 	</div>
 
 	<ul class="list-group" formArrayName="ingredients">
-		@for(ingredient of ingredients.controls; track $index; let ingredientIndex = $index){
-			<li class="list-group-item d-flex justify-content-between shadow-sm column-gap-2" [formGroupName]="ingredientIndex">
+		@for(ingredient of ingredients.controls; track ingredient.value.name;){
+			<li class="list-group-item d-flex justify-content-between shadow-sm column-gap-2" [formGroupName]="$index">
 
 				<input class="form-control form-control-sm" formControlName="name" type="text">
 				
@@ -23,7 +23,19 @@
 						<option [ngValue]="measurement">{{ measurement.label }}</option>
 					}
 				</select>
+
+				<button class="btn btn-danger btn-sm" type="button" (click)="removeIngredient($index)">
+					<i class="bi bi-trash fs-6 p-0"></i>
+				</button>
 			</li>
+		}
+
+		@if(ingredients.controls.length > 0){
+			<li class="list-group-item d-grid">
+				<button class="btn btn-primary " type="button" (click)="addIngredient()">Add ingredient</button>
+			</li>
+		} @else {
+			<p class="text-center rounded-2 border p-3 shadow-sm py-4 w-100">No ingredients for this recipe registered</p>
 		}
 	</ul>
 

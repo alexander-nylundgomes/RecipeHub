@@ -77,6 +77,13 @@ export class EditRecipeComponent implements OnInit {
     this.measurements$ = this.recipeService.getMeasurements().pipe(takeUntil(this.destroyed$));
   }
 
+  addIngredient(){
+    this.ingredients.push(this.newIngredient())
+  }
+
+  removeIngredient(index: number){
+    this.ingredients.removeAt(index);
+  }
 
   onSubmit() {
     if (this.form.valid) {
@@ -85,15 +92,15 @@ export class EditRecipeComponent implements OnInit {
 
           const updatedRecipe = this.form.value;
           updatedRecipe.id = this.recipeId;
-          console.log(updatedRecipe)
           this.store.dispatch(RecipeActions.updateRecipe({ recipe: updatedRecipe })) ;
           this.alertService.addAlert({message: "Updated recipe!", type: AlertType.SUCCESS, id: -1});
+          this.router.navigate(["recipe", this.recipeId]);
         }else{
-          this.alertService.addAlert({message: "Could not update recipe!", type: AlertType.DANGER, id: -1});
+          this.alertService.addAlert({message: "Could not save recipe!", type: AlertType.DANGER, id: -1});
         }
       });
     }else{
-      this.alertService.addAlert({message: "Not valid!", type: AlertType.DANGER, id: -1});
+      this.alertService.addAlert({message: "Could not save recipe!", type: AlertType.DANGER, id: -1});
     }
   }
 
