@@ -12,8 +12,10 @@ export class AlertService{
 
 	alerts:  WritableSignal<Array<Alert>> = signal([]);
   
-	addAlert(alert: Alert){
-		alert.id = this.randomId();
+	addAlert(message: string, type: AlertType){
+		const id = this.randomId();
+		const alert = { message, type, id };
+		
 		this.alerts.update(alerts => [alert, ...alerts])
 	}
   

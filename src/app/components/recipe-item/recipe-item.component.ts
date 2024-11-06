@@ -24,7 +24,7 @@ export class RecipeItemComponent {
 
   deleteRecipe(){
     this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipeItem().id}));
-    this.alertService.addAlert({ message: "Successfully deleted recipe!", type: AlertType.SUCCESS, id: -1});
+    this.alertService.addAlert("Successfully deleted recipe!", AlertType.SUCCESS);
   }
 
   editRecipe(){

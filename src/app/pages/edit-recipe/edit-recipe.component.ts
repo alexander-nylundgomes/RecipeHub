@@ -93,14 +93,14 @@ export class EditRecipeComponent implements OnInit {
           const updatedRecipe = this.form.value;
           updatedRecipe.id = this.recipeId;
           this.store.dispatch(RecipeActions.updateRecipe({ recipe: updatedRecipe })) ;
-          this.alertService.addAlert({message: "Updated recipe!", type: AlertType.SUCCESS, id: -1});
+          this.alertService.addAlert("Updated recipe!", AlertType.SUCCESS);
           this.router.navigate(["recipe", this.recipeId]);
         }else{
-          this.alertService.addAlert({message: "Could not save recipe!", type: AlertType.DANGER, id: -1});
+          this.alertService.addAlert("Could not save recipe!", AlertType.DANGER);
         }
       });
     }else{
-      this.alertService.addAlert({message: "Could not save recipe!", type: AlertType.DANGER, id: -1});
+      this.alertService.addAlert("Could not save recipe!", AlertType.DANGER);
     }
   }
 
