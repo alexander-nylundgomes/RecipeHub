@@ -1,0 +1,21 @@
+
+<div class="card-wrapper">
+
+	<div class="lists" cdkDropListGroup>
+		<!-- <div class="no-list list" cdkDropList [cdkDropListData]="notLiked" (cdkDropListDropped)="drop($event)"></div> -->
+	
+		<div class="standard-list list" cdkDropList [cdkDropListData]="recipes" >
+
+			@for(recipe of recipes; track recipe.id){
+				<div class="card" cdkDrag [cdkDragData]="recipe" (cdkDragMoved)="onDragMove($event)" [style]="{'transform': 'rotate(' + recipe.rotation + 'deg)'}">
+					{{ recipe.title }}
+				</div>
+			}
+
+		</div>
+	
+		<!-- <div class="yes-list list" cdkDropList [cdkDropListData]="liked" (cdkDropListDropped)="drop($event)"></div> -->
+	</div>
+
+
+</div>
