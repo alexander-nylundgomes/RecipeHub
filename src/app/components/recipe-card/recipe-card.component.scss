@@ -1,4 +1,19 @@
 img{
-	aspect-ratio: 2/1;
-	
+	aspect-ratio: 2/1;	
+}
+
+.card.M{width: 18rem !important;}
+.card.FLUID{width: 100% !important;}
+
+.recipe-creator-avatar{
+	bottom: 5px;
+	left: 5px;
+	position: absolute;
+}
+
+.description{
+	display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

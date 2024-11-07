@@ -1,0 +1,19 @@
+@import '../../../../node_modules/bootstrap/scss/functions';
+@import '../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../node_modules/bootstrap/scss/mixins';
+
+.recipe-card-list{
+	display: grid;
+}
+
+@media (min-width: 0) {
+	.recipe-card-list{grid-template-columns: repeat(1, minmax(0,1fr))}
+}
+
+@include media-breakpoint-up(sm) { 
+	.recipe-card-list{grid-template-columns: repeat(2, minmax(0,1fr))}
+}
+
+@include media-breakpoint-up(md) { 
+	.recipe-card-list{grid-template-columns: repeat(3, minmax(0,1fr))}
+}

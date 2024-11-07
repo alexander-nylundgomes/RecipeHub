@@ -7,15 +7,15 @@ import { selectRecipe } from '../../state/recipes/recipes.selectors';
 import { AsyncPipe, Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
-import { Ingredient } from '../../interfaces/ingredient';
 import { RecipeStep } from '../../interfaces/recipe-step';
 import { RecipeService } from '../../services/recipe.service';
 import { Measurement } from '../../interfaces/measurement';
+import { AvatarComponent } from '../../components/avatar/avatar.component';
 
 @Component({
   selector: 'app-recipe',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, AvatarComponent],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss'
 })

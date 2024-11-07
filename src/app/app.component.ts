@@ -6,6 +6,7 @@ import { Store, StoreModule } from '@ngrx/store';
 import { RecipeActions } from './state/recipes/recipes.actions';
 import { AlertComponent } from './components/alert/alert.component';
 import { AlertService } from './services/alert.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -19,10 +20,12 @@ export class AppComponent implements OnInit{
 
   constructor(
     private store: Store,
-    public alertService: AlertService
+    public alertService: AlertService,
+    private userService: UserService
   ){}
 
   ngOnInit(): void {
     this.store.dispatch(RecipeActions.loadRecipes());
+    this.userService.setUser();
   }
 }

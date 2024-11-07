@@ -7,6 +7,6 @@ export const selectRecipe = (id: number) => createSelector(selectRecipes, (recip
     return recipes.find(recipe => recipe.id === id);
 }) 
 
-export const selectUsedIngredients = createSelector(selectRecipes, (recipes) => {
-    recipes.map(recipe => recipe.ingredients);
+export const selectLikedRecipes = () => createSelector(selectRecipes, (recipes) => {
+    return recipes.filter(recipe => recipe.isLiked)
 })

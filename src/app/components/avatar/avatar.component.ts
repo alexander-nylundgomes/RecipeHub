@@ -1,4 +1,4 @@
-import { Component, input, InputSignal } from '@angular/core';
+import { Component, Input, input, InputSignal } from '@angular/core';
 
 @Component({
   selector: 'app-avatar',
@@ -10,5 +10,5 @@ import { Component, input, InputSignal } from '@angular/core';
 export class AvatarComponent {
 
   size: InputSignal<("S" | "M" | "L")> = input("M" as ("S" | "M" | "L"));
-
+  userId: InputSignal<number> = input(1);
 }

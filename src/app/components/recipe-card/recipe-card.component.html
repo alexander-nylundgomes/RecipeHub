@@ -1,15 +1,28 @@
-<div class="card p-3 shadow-sm pointer" style="width: 20rem;" (click)="navigateToRecipe()">
-	<img src="/images/food.jpg" class="card-img-top rounded-2 object-fit-cover" alt="...">
+<div class="card p-3 shadow-sm pointer" [class]="size()" (click)="navigateToRecipe()">
 	
-	<div class="card-body px-0 pb-0 d-flex flex-column">
+	<div class="image-wrapper position-relative">
+		<img src="/images/recipes/1.jpg" class="card-img-top rounded-2 object-fit-cover" alt="...">
+	</div>
+	
+	<div class="card-body px-0 pt-2 pb-0 d-flex flex-column">
 		<div class="mb-2 d-flex justify-content-between">
-			<h5 class="m-0">Tomahawk steak</h5>
+
+			<div class="title-section d-flex column-gap-2 align-items-center">
+				<div class="title">
+					<h5 class="m-0">{{ recipe().title }}</h5>
+					<div class="d-flex column-gap-1 align-items-center">
+						<p class="text-secondary fs-7 m-0">By Jane Doe</p>
+					</div>
+				</div>
+			</div>
 			<i class="bi bi-heart text-primary"></i>
 		</div>
 	
-		<p class="card-text text-secondary m-0 fs-7">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus dignissim tincidunt. Curabitur eget suscipit.</p>
+		<p class="card-text description text-secondary m-0 fs-7">
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus dignissim tincidunt. Curabitur eget suscipit.
+		</p>
 	
-		<div class="border-top border-bottom my-3 py-2 d-flex align-items-center column-gap-3">
+		<div class="border-top mt-3 pt-2 d-flex align-items-center column-gap-3 flex-wrap">
 
 			<div class="time d-flex align-items-center column-gap-2 text-secondary">
 				<i class="bi bi-clock fs-7"></i>
@@ -17,25 +30,14 @@
 			</div>
 
 			<div class="time d-flex align-items-center column-gap-2 text-secondary">
-				<i class="bi bi-clock fs-7"></i>
+				<i class="bi bi-egg-fried fs-7"></i>
 				<p class="m-0 fs-7">12 st</p>
 			</div>
 
 			<div class="time d-flex align-items-center column-gap-1 text-secondary ms-auto">
-				<!-- <p class="m-0 fs-7">4/5</p> -->
+				<p class="m-0 fs-7">4.5</p>
 				<i class="bi bi-star-fill fs-7 text-yellow"></i>
-				<i class="bi bi-star-fill fs-7 text-yellow"></i>
-				<i class="bi bi-star-fill fs-7 text-yellow"></i>
-				<i class="bi bi-star-fill fs-7 text-yellow"></i>
-				<i class="bi bi-star fs-7 text-yellow "></i>
 			</div>
-		</div>
-
-		<div class="writer d-flex align-items-center column-gap-3">
-			<app-avatar size="S"></app-avatar>
-			<p class="m-0">Jane Doe</p>
-
-			<button class="btn btn-primary btn-sm ms-auto">Follow</button>
 		</div>
 	</div>
 </div>

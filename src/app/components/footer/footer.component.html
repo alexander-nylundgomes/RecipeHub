@@ -1,7 +1,7 @@
 <div class="footer-wrapper w-100 h-100 px-4 border-top shadow">
 	
 	@for(button of buttons; track $index){
-		<div class="footer-button d-flex flex-column align-items-center justify-content-center">
+		<div class="footer-button d-flex flex-column align-items-center justify-content-center pointer" (click)="buttonClick(button)">
 			<i class="bi fs-3 d-flex" [class.text-secondary]="!button.selected" [class.text-primary]="button.selected" [class]="button.icon"></i>
 			<p class="m-0 fs-7" [class.text-secondary]="!button.selected" [class.text-primary]="button.selected">{{ button.text }}</p>
 		</div>

@@ -9,7 +9,6 @@ import {
 } from 'rxjs';
 import { Measurement } from '../../interfaces/measurement';
 import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Ingredient } from '../../interfaces/ingredient';
 import { Recipe } from '../../interfaces/recipe';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
