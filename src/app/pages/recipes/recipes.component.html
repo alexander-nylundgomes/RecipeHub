@@ -1,6 +1,17 @@
 
-<div class="recipe-wrapper p-3 d-flex flex-column row-gap-2">
-    @for(recipe of (recipes$ | async); track recipe.id){
+<div class="recipe-wrapper p-3 d-flex flex-column w-100">
+    <!-- @for(recipe of (recipes$ | async); track recipe.id){
         <app-recipe-item class="pointer" (click)="router.navigate(['recipe', recipe.id])"  [recipeItem]="recipe"></app-recipe-item>
-    }
-</div>
+    } -->
+
+
+    <div class="title mb-3">
+        <p class="m-0 text-secondary">Welcome back</p>
+        <h1 class="m-0">Alexander</h1>
+    </div>
+
+    <app-in-focus class="mb-5"></app-in-focus>
+
+    <app-recipe-card-section class="mb-4" title="Your favorites"></app-recipe-card-section>
+    <app-recipe-card-section title="All recipes"></app-recipe-card-section>
+</div> 

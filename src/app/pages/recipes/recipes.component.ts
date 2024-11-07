@@ -8,11 +8,14 @@ import { RecipeActions, RecipeApiActions } from '../../state/recipes/recipes.act
 import { RecipeItemComponent } from '../../components/recipe-item/recipe-item.component';
 import { selectRecipes } from '../../state/recipes/recipes.selectors';
 import { Router } from '@angular/router';
+import { RecipeCardComponent } from '../../components/recipe-card/recipe-card.component';
+import { RecipeCardSectionComponent } from '../../components/recipe-card-section/recipe-card-section.component';
+import { InFocusComponent } from '../../components/in-focus/in-focus.component';
 
 @Component({
   selector: 'app-recipes',
   standalone: true,
-  imports: [AsyncPipe, RecipeItemComponent],
+  imports: [AsyncPipe, RecipeItemComponent, RecipeCardSectionComponent, InFocusComponent],
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.scss'
 })

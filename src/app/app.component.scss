@@ -1,6 +1,7 @@
 .wrapper{
     display: grid;
-    grid-template-rows: 65px minmax(0,1fr) 65px;
+    grid-template-rows: minmax(0,1fr) 75px;
+    grid-template-columns: 100%;
 }
 
 .router-outlet-wrapper{
