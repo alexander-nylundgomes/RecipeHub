@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import {
   EMPTY,
   Observable,
@@ -27,6 +27,15 @@ import { AlertType } from '../../enums/alert-type';
   styleUrl: './edit-recipe.component.scss',
 })
 export class EditRecipeComponent implements OnInit {
+  
+  formBuilder: FormBuilder      = inject(FormBuilder);
+  route: ActivatedRoute         = inject(ActivatedRoute);
+  store: Store                  = inject(Store);
+  router: Router                = inject(Router);
+  location: Location            = inject(Location);
+  alertService: AlertService    = inject(AlertService);
+  recipeService: RecipeService  = inject(RecipeService);
+
   destroyed$: ReplaySubject<boolean> = new ReplaySubject();
   measurements$: Observable<Measurement[]> = EMPTY;
   recipe$: Observable<Readonly<Recipe | undefined>> = EMPTY;
@@ -39,15 +48,6 @@ export class EditRecipeComponent implements OnInit {
     steps: this.formBuilder.array([]),
   });
 
-  constructor(
-    private formBuilder: FormBuilder,
-    private route: ActivatedRoute,
-    private store: Store,
-    public router: Router,
-    public location: Location,
-    private alertService: AlertService,
-    private recipeService: RecipeService
-  ) {}
 
   ngOnInit(): void {
     this.recipe$ = this.route.paramMap.pipe(

@@ -58,6 +58,15 @@ export const userReducer = createReducer(
     }
   })),
 
+  // Edit user
+  on(UserActions.editUser, (state, { user }) => ({
+    ...state,
+    loggedInUser: {
+      loaded: state.likedRecipes.loaded,
+      data: user
+    }
+  })),
+
   // API Success Actions
   on(UserApiActions.loadUserSuccess, (state, { user }) => ({
     ...state,

@@ -10,7 +10,7 @@
 	.recipe-card-list{grid-template-columns: repeat(1, minmax(0,1fr))}
 }
 
-@include media-breakpoint-up(sm) { 
+@media (min-width: 450px) {
 	.recipe-card-list{grid-template-columns: repeat(2, minmax(0,1fr))}
 }
 

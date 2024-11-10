@@ -1,1 +1,55 @@
-<p>settings works!</p>
+<div class="settings-wrapper w-100 h-100 bg-light">
+	<div class="bg-primary-subtle p-5 w-100 d-flex flex-column align-items-center justify-content-center">
+		<app-avatar class="mb-2" [userId]="(loggedInUser$ | async)?.id || -1" size="L"></app-avatar>
+		<h4 class="m-0">{{ (loggedInUser$ | async)?.firstName }} {{ (loggedInUser$ | async)?.lastName }}</h4>
+		<p class="text-secondary m-0">{{ (loggedInUser$ | async)?.handle }}</p>
+	</div>
+
+	<form class="settings p-3" [formGroup]="form" (submit)="onFormSubmit()">
+		<div class="shadow-sm bg-white">
+			<ul class="list-group">
+				<li class="list-group-item d-flex justify-content-between">
+					@if(editMode){
+						<input class="form-control form-control-sm" formControlName="firstName" type="text">
+					} @else {
+						<p class="m-0 text-secondary">First name</p>
+						<p class="m-0">{{ (loggedInUser$ | async)?.firstName }}</p>
+					}
+				</li>
+
+				<li class="list-group-item d-flex justify-content-between">
+
+					@if(editMode){
+						<input class="form-control form-control-sm" formControlName="lastName" type="text">
+					} @else {
+						<p class="m-0 text-secondary">Last name</p>
+						<p class="m-0">{{ (loggedInUser$ | async)?.lastName }}</p>
+					}
+
+				</li>
+
+				<li class="list-group-item d-flex justify-content-between">
+
+					@if(editMode){
+						<input class="form-control form-control-sm" formControlName="email" type="text">
+					} @else {
+						<p class="m-0 text-secondary">Email</p>
+						<p class="m-0">{{ (loggedInUser$ | async)?.email }}</p>
+					}
+
+				</li>
+
+				<li class="list-group-item d-flex justify-content-between">
+
+					@if(editMode){
+						<button class="btn btn-outline-primary btn-sm" type="button" (click)="toggleEditMode(false)">Cancel</button>
+						<button class="btn btn-primary btn-sm" type="submit">Save</button>
+					} @else {
+						<button class="btn btn-primary btn-sm " (click)="toggleEditMode(true)" type="button">Edit settings</button>
+					}
+					
+				</li>
+			  </ul>
+		</div>
+	</form>
+</div>

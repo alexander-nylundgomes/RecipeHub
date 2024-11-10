@@ -1,0 +1,14 @@
+img{
+	background-position: center;
+	background-size: cover;
+	aspect-ratio: 2 / 1;
+}
+
+.image-overlay{
+	height: var(--bs-border-radius-xl) !important;
+	bottom: 0;
+}
+
+.content{
+	z-index: 100;
+}

@@ -1,10 +1,10 @@
 <ul class="list-group">
 
 	@for(user of users(); track user.id){
-		<li class="list-group-item d-flex column-gap-2 align-items-center" >
+		<li class="list-group-item d-flex column-gap-2 align-items-center pointer" >
 			<app-avatar [userId]="user.id"></app-avatar>
 	
-			<div class="title-section d-flex flex-column">
+			<div class="title-section d-flex flex-column" (click)="goToUser(user)">
 				<h6 class="m-0 ">{{ user.firstName }} {{ user.lastName }}</h6>
 				<p class="m-0 text-secondary lh-1 fs-7">&#64;janedoe</p>
 			</div>
@@ -13,7 +13,7 @@
 				class="btn btn-sm ms-auto"
 				[class.btn-outline-primary]="(isFollowing(user.id) | async)" 
 				[class.btn-primary]="!(isFollowing(user.id) | async)" 
-				(click)="toggleFollow(user)">{{(isFollowing(user.id) | async) ? 'Unfollow' : 'Follow'}}</button>
+				(click)="toggleFollow(user); $event.stopPropagation()">{{(isFollowing(user.id) | async) ? 'Unfollow' : 'Follow'}}</button>
 		</li>
 	}
 

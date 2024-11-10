@@ -1,362 +1,722 @@
 [
     {
-        "title": "Spaghetti Bolognese",
         "id": 1,
-        "ingredients": [
-            {
-                "name": "Spaghetti",
-                "amount": 200,
-                "measurement": {
-                    "id": 1,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Ground Beef",
-                "amount": 300,
-                "measurement": {
-                    "id": 2,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Tomato Sauce",
-                "amount": 150,
-                "measurement": {
-                    "id": 3,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Onion",
-                "amount": 1,
-                "measurement": {
-                    "id": 4,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            },
-            {
-                "name": "Garlic",
-                "amount": 2,
-                "measurement": {
-                    "id": 5,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Cook pasta",
-                "longText": "Boil water in a pot, add salt, and cook the spaghetti until al dente."
-            },
-            {
-                "shortText": "Prepare sauce",
-                "longText": "In a pan, sauté onions and garlic, then add ground beef and cook until browned. Add tomato sauce and simmer."
-            },
-            {
-                "shortText": "Combine",
-                "longText": "Mix the cooked spaghetti with the sauce and serve hot."
-            }
-        ]
-    },
-    {
         "title": "Pancakes",
+        "description": "Fluffy and delicious pancakes perfect for breakfast.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Flour",
+                    "id": 1
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Milk",
+                    "id": 5
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Eggs",
+                    "id": 4
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "piece",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Butter",
+                    "id": 6
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "tbsp",
+                    "id": 5
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Mix Ingredients",
+                "longText": "Combine flour, milk, eggs, and melted butter in a bowl and whisk until smooth."
+            },
+            {
+                "shortText": "Cook",
+                "longText": "Pour batter onto a hot greased griddle. Cook until bubbles form, then flip and cook until golden."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.5,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
         "id": 2,
+        "title": "Spaghetti Carbonara",
+        "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
         "ingredients": [
             {
-                "name": "Flour",
+                "ingredient": {
+                    "name": "Spaghetti",
+                    "id": 9
+                },
                 "amount": 200,
                 "measurement": {
-                    "id": 6,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
                 }
             },
             {
-                "name": "Milk",
-                "amount": 300,
-                "measurement": {
-                    "id": 7,
-                    "measurementType": "VOLUME",
-                    "label": "milliliters"
-                }
-            },
-            {
-                "name": "Eggs",
+                "ingredient": {
+                    "name": "Eggs",
+                    "id": 4
+                },
                 "amount": 2,
                 "measurement": {
-                    "id": 8,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
+                    "measurementType": "Count",
+                    "label": "pieces",
+                    "id": 4
                 }
             },
             {
-                "name": "Sugar",
-                "amount": 2,
-                "measurement": {
-                    "id": 9,
-                    "measurementType": "VOLUME",
-                    "label": "tablespoons"
-                }
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Prepare batter",
-                "longText": "In a bowl, mix flour, milk, eggs, and sugar until smooth."
-            },
-            {
-                "shortText": "Cook pancakes",
-                "longText": "Heat a pan over medium heat and pour in a ladle of batter. Cook until bubbles form on the surface, flip, and cook until golden brown."
-            },
-            {
-                "shortText": "Serve",
-                "longText": "Serve pancakes with syrup or your favorite toppings."
-            }
-        ]
-    },
-    {
-        "title": "Chicken Curry",
-        "id": 3,
-        "ingredients": [
-            {
-                "name": "Chicken Breast",
-                "amount": 400,
-                "measurement": {
-                    "id": 10,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Coconut Milk",
-                "amount": 200,
-                "measurement": {
-                    "id": 11,
-                    "measurementType": "VOLUME",
-                    "label": "milliliters"
-                }
-            },
-            {
-                "name": "Curry Powder",
-                "amount": 2,
-                "measurement": {
-                    "id": 12,
-                    "measurementType": "VOLUME",
-                    "label": "tablespoons"
-                }
-            },
-            {
-                "name": "Onion",
-                "amount": 1,
-                "measurement": {
-                    "id": 13,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            },
-            {
-                "name": "Garlic",
-                "amount": 2,
-                "measurement": {
-                    "id": 14,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Prepare ingredients",
-                "longText": "Chop the onion and garlic, and cut chicken into bite-sized pieces."
-            },
-            {
-                "shortText": "Cook chicken",
-                "longText": "In a pan, sauté onion and garlic, then add chicken and cook until no longer pink."
-            },
-            {
-                "shortText": "Add curry",
-                "longText": "Stir in curry powder and coconut milk. Simmer until chicken is cooked through and sauce thickens."
-            }
-        ]
-    },
-    {
-        "title": "Omelette",
-        "id": 4,
-        "ingredients": [
-            {
-                "name": "Eggs",
-                "amount": 3,
-                "measurement": {
-                    "id": 15,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            },
-            {
-                "name": "Milk",
+                "ingredient": {
+                    "name": "Parmesan Cheese",
+                    "id": 10
+                },
                 "amount": 50,
                 "measurement": {
-                    "id": 16,
-                    "measurementType": "VOLUME",
-                    "label": "milliliters"
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
                 }
             },
             {
-                "name": "Cheese",
-                "amount": 50,
-                "measurement": {
-                    "id": 17,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Salt",
-                "amount": 1,
-                "measurement": {
-                    "id": 18,
-                    "measurementType": "VOLUME",
-                    "label": "teaspoon"
-                }
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Beat eggs",
-                "longText": "Whisk eggs and milk together in a bowl. Add a pinch of salt."
-            },
-            {
-                "shortText": "Cook omelette",
-                "longText": "Heat a pan and pour in the mixture. Sprinkle cheese on top and cook until eggs are set."
-            },
-            {
-                "shortText": "Fold and serve",
-                "longText": "Fold the omelette in half and serve immediately."
-            }
-        ]
-    },
-    {
-        "title": "Tomato Soup",
-        "id": 5,
-        "ingredients": [
-            {
-                "name": "Tomatoes",
-                "amount": 500,
-                "measurement": {
-                    "id": 19,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Onion",
-                "amount": 1,
-                "measurement": {
-                    "id": 20,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            },
-            {
-                "name": "Garlic",
-                "amount": 2,
-                "measurement": {
-                    "id": 21,
-                    "measurementType": "PIECE",
-                    "label": "pieces"
-                }
-            },
-            {
-                "name": "Basil",
-                "amount": 5,
-                "measurement": {
-                    "id": 22,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            }
-        ],
-        "steps": [
-            {
-                "shortText": "Cook tomatoes",
-                "longText": "Chop tomatoes, onion, and garlic, then cook in a pot until soft."
-            },
-            {
-                "shortText": "Blend",
-                "longText": "Use a blender to puree the cooked ingredients until smooth."
-            },
-            {
-                "shortText": "Season and serve",
-                "longText": "Add basil and season to taste with salt and pepper."
-            }
-        ]
-    },
-    {
-        "title": "Caesar Salad",
-        "id": 6,
-        "ingredients": [
-            {
-                "name": "Romaine Lettuce",
-                "amount": 200,
-                "measurement": {
-                    "id": 23,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Caesar Dressing",
+                "ingredient": {
+                    "name": "Pancetta",
+                    "id": 11
+                },
                 "amount": 100,
                 "measurement": {
-                    "id": 24,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Croutons",
-                "amount": 50,
-                "measurement": {
-                    "id": 25,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
-                }
-            },
-            {
-                "name": "Parmesan Cheese",
-                "amount": 30,
-                "measurement": {
-                    "id": 26,
-                    "measurementType": "WEIGHT",
-                    "label": "grams"
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
                 }
             }
         ],
         "steps": [
             {
-                "shortText": "Prepare ingredients",
-                "longText": "Chop lettuce and grate parmesan cheese."
+                "shortText": "Cook Spaghetti",
+                "longText": "Boil spaghetti until al dente, then drain and set aside."
             },
             {
-                "shortText": "Toss salad",
-                "longText": "In a bowl, combine lettuce, dressing, croutons, and parmesan."
-            },
-            {
-                "shortText": "Serve",
-                "longText": "Serve immediately after tossing."
+                "shortText": "Prepare Sauce",
+                "longText": "Mix eggs and cheese in a bowl. Saut\u00e9 pancetta until crispy, add spaghetti, and stir in the egg mixture."
             }
-        ]
+        ],
+        "isLiked": false,
+        "rating": 4.7,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
     },
     {
-        "title": "Beef Tacos",
-        "id": 7,
+        "id": 3,
+        "title": "Chocolate Chip Cookies",
+        "description": "Classic chocolate chip cookies with a crispy edge and chewy center.",
         "ingredients": [
-        ]
+            {
+                "ingredient": {
+                    "name": "Butter",
+                    "id": 6
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Sugar",
+                    "id": 2
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Flour",
+                    "id": 1
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cups",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Chocolate Chips",
+                    "id": 12
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Mix Ingredients",
+                "longText": "Cream together butter and sugar, then add flour and chocolate chips until dough forms."
+            },
+            {
+                "shortText": "Bake",
+                "longText": "Place dough on a baking sheet and bake at 350\u00b0F for 10-12 minutes until golden."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.9,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 4,
+        "title": "Chicken Alfredo",
+        "description": "Creamy and comforting chicken alfredo pasta.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Fettuccine",
+                    "id": 13
+                },
+                "amount": 200,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Chicken Breast",
+                    "id": 14
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "piece",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Parmesan Cheese",
+                    "id": 10
+                },
+                "amount": 50,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Cream",
+                    "id": 15
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook Fettuccine",
+                "longText": "Boil the fettuccine until al dente, drain and set aside."
+            },
+            {
+                "shortText": "Prepare Sauce",
+                "longText": "Cook chicken and slice, then simmer with cream and Parmesan cheese until thickened. Add pasta and mix."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.6,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 5,
+        "title": "Vegetable Stir Fry",
+        "description": "A healthy vegetable stir fry with a mix of colorful veggies.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Broccoli",
+                    "id": 16
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Bell Peppers",
+                    "id": 17
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "piece",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Carrot",
+                    "id": 18
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "piece",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Soy Sauce",
+                    "id": 19
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "tbsp",
+                    "id": 5
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare Veggies",
+                "longText": "Chop broccoli, bell peppers, and carrots into bite-sized pieces."
+            },
+            {
+                "shortText": "Stir Fry",
+                "longText": "Saut\u00e9 vegetables in a pan with oil and soy sauce until tender."
+            }
+        ],
+        "isLiked": false,
+        "rating": 4.4,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 6,
+        "title": "Banana Bread",
+        "description": "Moist and delicious banana bread.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Bananas",
+                    "id": 20
+                },
+                "amount": 3,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "pieces",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Flour",
+                    "id": 1
+                },
+                "amount": 1.5,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cups",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Sugar",
+                    "id": 2
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Butter",
+                    "id": 6
+                },
+                "amount": 0.5,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare Batter",
+                "longText": "Mash bananas and mix with flour, sugar, and melted butter."
+            },
+            {
+                "shortText": "Bake",
+                "longText": "Pour into a loaf pan and bake at 350\u00b0F for 50 minutes."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.8,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 7,
+        "title": "Caesar Salad",
+        "description": "Classic Caesar salad with crisp romaine, croutons, and Caesar dressing.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Romaine Lettuce",
+                    "id": 21
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "head",
+                    "id": 6
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Parmesan Cheese",
+                    "id": 10
+                },
+                "amount": 30,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Croutons",
+                    "id": 22
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Caesar Dressing",
+                    "id": 23
+                },
+                "amount": 0.5,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Assemble Salad",
+                "longText": "Chop lettuce and mix with Parmesan, croutons, and Caesar dressing."
+            }
+        ],
+        "isLiked": false,
+        "rating": 4.3,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 8,
+        "title": "Beef Tacos",
+        "description": "Mexican-style tacos with seasoned ground beef and toppings.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Ground Beef",
+                    "id": 24
+                },
+                "amount": 200,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Taco Shells",
+                    "id": 25
+                },
+                "amount": 3,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "pieces",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Lettuce",
+                    "id": 21
+                },
+                "amount": 0.5,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "head",
+                    "id": 6
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Cheese",
+                    "id": 10
+                },
+                "amount": 50,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook Beef",
+                "longText": "Saut\u00e9 ground beef with taco seasoning until browned."
+            },
+            {
+                "shortText": "Assemble Tacos",
+                "longText": "Fill taco shells with beef, lettuce, and cheese."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.7,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 9,
+        "title": "Garlic Butter Shrimp",
+        "description": "Quick and easy garlic butter shrimp.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Shrimp",
+                    "id": 26
+                },
+                "amount": 200,
+                "measurement": {
+                    "measurementType": "Weight",
+                    "label": "grams",
+                    "id": 2
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Garlic",
+                    "id": 27
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "cloves",
+                    "id": 7
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Butter",
+                    "id": 6
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "tbsp",
+                    "id": 5
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Saut\u00e9 Shrimp",
+                "longText": "Cook shrimp with garlic in butter until pink and tender."
+            }
+        ],
+        "isLiked": false,
+        "rating": 4.6,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 10,
+        "title": "French Toast",
+        "description": "Golden and crispy French toast, perfect for breakfast.",
+        "ingredients": [
+            {
+                "ingredient": {
+                    "name": "Bread",
+                    "id": 28
+                },
+                "amount": 2,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "slices",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Eggs",
+                    "id": 4
+                },
+                "amount": 1,
+                "measurement": {
+                    "measurementType": "Count",
+                    "label": "piece",
+                    "id": 4
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Milk",
+                    "id": 5
+                },
+                "amount": 0.25,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "cup",
+                    "id": 1
+                }
+            },
+            {
+                "ingredient": {
+                    "name": "Cinnamon",
+                    "id": 29
+                },
+                "amount": 0.5,
+                "measurement": {
+                    "measurementType": "Volume",
+                    "label": "tsp",
+                    "id": 3
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare Mixture",
+                "longText": "Whisk eggs, milk, and cinnamon together in a bowl."
+            },
+            {
+                "shortText": "Cook Toast",
+                "longText": "Dip bread slices into the mixture and cook on a skillet until golden brown on both sides."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.8,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
     }
 ]

@@ -6,6 +6,7 @@ import { EMPTY, map, Observable, take } from 'rxjs';
 import { selectFollowsUsers } from '../../state/users/users.selectors';
 import { UserActions } from '../../state/users/users.actions';
 import { AsyncPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-list',
@@ -17,7 +18,7 @@ import { AsyncPipe } from '@angular/common';
 export class UserListComponent implements OnInit{
   store: Store = inject(Store);
   users: InputSignal<User[]> = input.required();
-
+  router: Router = inject(Router);
   followsUsers$: Observable<ReadonlyArray<User>> = EMPTY;
 
   ngOnInit(): void {
@@ -26,6 +27,10 @@ export class UserListComponent implements OnInit{
 
   isFollowing(userId: number): Observable<boolean>{
     return this.followsUsers$.pipe(map(users => users.some(user => user.id === userId)))
+  }
+
+  goToUser(user: User){
+    this.router.navigate(['user', user.id]);
   }
 
   toggleFollow(user: User){

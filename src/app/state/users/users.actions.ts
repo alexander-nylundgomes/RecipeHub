@@ -9,6 +9,8 @@ export const UserActions = createActionGroup({
         'Unlike recipe': props<{ recipeId: number }>(),
         'Follow user': props<{ user: User }>(),
         'Unfollow user': props<{ id: number }>(),
+        'Edit user': props<{user: User }>(),
+
         'Load user': emptyProps,
         'Load follows users': emptyProps,
         'Load liked recipes': emptyProps

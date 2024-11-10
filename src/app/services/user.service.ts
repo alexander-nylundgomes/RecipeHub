@@ -10,8 +10,12 @@ export class UserService{
 
 	http: HttpClient = inject(HttpClient);
 
-	getUser(){
+	getLoggedInUser(){
 		return this.http.get<User>('/sample-data/user.json');
+	}
+	
+	getUser(userId: number){
+		return this.http.get<User>(`/sample-data/users/${userId}.json`);
 	}
 
 	getFollowsUsers(){

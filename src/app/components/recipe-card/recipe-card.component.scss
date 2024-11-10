@@ -17,3 +17,15 @@ img{
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+.recipe-title{
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 100%;
+}
+
+.title-section{
+	display: grid;
+	grid-template-columns: minmax(0,1fr) auto;
+}
