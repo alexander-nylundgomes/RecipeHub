@@ -6,7 +6,3 @@ export const selectRecipes = createFeatureSelector<ReadonlyArray<Recipe>>('recip
 export const selectRecipe = (id: number) => createSelector(selectRecipes, (recipes) => {
     return recipes.find(recipe => recipe.id === id);
 }) 
-
-export const selectLikedRecipes = () => createSelector(selectRecipes, (recipes) => {
-    return recipes.filter(recipe => recipe.isLiked)
-})

@@ -7,6 +7,8 @@ import { recipeReducer } from './state/recipes/recipes.reducer';
 import { provideHttpClient } from '@angular/common/http';
 import { provideEffects } from '@ngrx/effects';
 import { RecipeEffects } from './state/recipes/recipes.effects';
+import { UserEffects } from './state/users/users.effects';
+import { userReducer } from './state/users/users.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -14,8 +16,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(routes),
     provideHttpClient(),
     provideStore({
-        recipes: recipeReducer
+        recipes: recipeReducer,
+        user: userReducer
     }),
-    provideEffects([RecipeEffects])
+    provideEffects([RecipeEffects, UserEffects])
 ]
 };

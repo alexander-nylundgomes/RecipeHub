@@ -1,4 +1,4 @@
-import { Injectable, OnInit, signal, Signal, WritableSignal } from "@angular/core";
+import { inject, Injectable, OnInit, signal, Signal, WritableSignal } from "@angular/core";
 import { User } from "../interfaces/user";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, take } from "rxjs";
@@ -8,20 +8,17 @@ import { BehaviorSubject, take } from "rxjs";
 })
 export class UserService{
 
-	loggedInUser$: BehaviorSubject<User | undefined> = new BehaviorSubject<User | undefined>(undefined);
-
-	constructor(
-		private http: HttpClient
-	){}
-
-
-	setUser(){
-		this.getUser().pipe(take(1)).subscribe((user: User) => {
-			this.loggedInUser$.next(user);
-		})
-	}
+	http: HttpClient = inject(HttpClient);
 
 	getUser(){
 		return this.http.get<User>('/sample-data/user.json');
+	}
+
+	getFollowsUsers(){
+		return this.http.get<User[]>('/sample-data/following.json');
+	}
+	
+	getLikes(){
+		return this.http.get<number[]>('/sample-data/likes.json');
 	}
 }

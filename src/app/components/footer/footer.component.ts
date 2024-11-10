@@ -1,8 +1,12 @@
 import { Component, computed, effect, inject, OnDestroy, OnInit, Signal } from '@angular/core';
 import { ActivatedRoute, EventType, Router } from '@angular/router';
-import { ReplaySubject, takeUntil, } from 'rxjs';
+import { pipe, ReplaySubject, switchMap, take, takeUntil, } from 'rxjs';
 import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
+import { Actions, ofType } from '@ngrx/effects';
+import { UserApiActions } from '../../state/users/users.actions';
+import { select, Store } from '@ngrx/store';
+import { selectLoggedInUser } from '../../state/users/users.selectors';
 
 interface FooterButton{
   icon: string, 
@@ -20,6 +24,8 @@ interface FooterButton{
 })
 export class FooterComponent implements OnInit, OnDestroy{
 
+  actions$: Actions = inject(Actions);
+  store: Store = inject(Store);
   userService: UserService = inject(UserService);
   router: Router = inject(Router);
 
@@ -31,25 +37,23 @@ export class FooterComponent implements OnInit, OnDestroy{
   ngOnInit(): void {
     this.router.events.pipe(takeUntil(this.destroyed$)).subscribe((event) => {
       if(event.type == EventType.NavigationEnd){
-        this.setButtons();
+        this.buttons.forEach((button) => {
+          button.selected = button.url == this.router.url;
+        })
       }
     });
 
-    this.userService.loggedInUser$.pipe(takeUntil(this.destroyed$)).subscribe(() => {
-      this.setButtons();
-    })
-  }
+    this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$)).subscribe((user) => {
+      this.buttons = [
+        {icon: "bi-house-fill", text: "Home", selected: true, url: "/"},
+        {icon: "bi-heart-fill", text: "Likes", selected: false, url: `/user/${user?.id}/likes`},
+        {icon: "bi-person-fill", text: "Following", selected: false, url: `/user/${user?.id}/following`},
+        {icon: "bi-gear-fill", text: "Settings", selected: false, url: "/settings"},
+      ];
 
-  setButtons(){
-    this.buttons = [
-      {icon: "bi-house-fill", text: "Home", selected: true, url: "/"},
-      {icon: "bi-heart-fill", text: "Likes", selected: false, url: `/user/${this.userService.loggedInUser$.getValue()?.id}/likes`},
-      {icon: "bi-person-fill", text: "Following", selected: false, url: `/user/${this.userService.loggedInUser$.getValue()?.id}/following`},
-      {icon: "bi-gear-fill", text: "Settings", selected: false, url: "/settings"},
-    ]
-
-    this.buttons.forEach((button) => {
-      button.selected = button.url == this.router.url;
+      this.buttons.forEach((button) => {
+        button.selected = button.url == this.router.url;
+      })
     })
   }
 

@@ -6,6 +6,6 @@
 
 <div class="recipes d-flex column-gap-3 py-3">
 	@for(recipe of (recipes() | async); track $index){
-		<app-recipe-card [recipe]="recipe"></app-recipe-card>
+		<app-recipe-card [recipe]="recipe" [isLiked]="!!likes()[recipe.id]"></app-recipe-card>
 	}
 </div>

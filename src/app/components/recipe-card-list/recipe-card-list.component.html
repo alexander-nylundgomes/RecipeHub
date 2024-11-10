@@ -1,7 +1,6 @@
 <div class="recipe-card-list mx-auto gap-3">
-	<app-recipe-card size="FLUID"></app-recipe-card>
-	<app-recipe-card size="FLUID"></app-recipe-card>
-	<app-recipe-card size="FLUID"></app-recipe-card>
-	<app-recipe-card size="FLUID"></app-recipe-card>
-	<app-recipe-card size="FLUID"></app-recipe-card>
+
+	@for (recipe of recipes(); track recipe.id) {
+		<app-recipe-card size="FLUID" [recipe]="recipe" [isLiked]="likes()[recipe.id]"></app-recipe-card>
+	}
 </div>

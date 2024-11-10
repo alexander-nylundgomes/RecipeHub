@@ -1,4 +1,11 @@
-import { createFeatureSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { UserState } from "./users-state";
+import { User } from "../../interfaces/user";
+import { Recipe } from "../../interfaces/recipe";
 
-// export const selectRecipes = createFeatureSelector<Readon<{}>>('users');
-// export const selectLoggedInUser = 
+export const selectUserState = createFeatureSelector<Readonly<UserState>>('user');
+export const selectLoggedInUser = createSelector(selectUserState, (state: UserState): User | undefined => state.loggedInUser.data);
+export const selectLikedRecipes = createSelector(selectUserState, (state: UserState): number[] => state.likedRecipes.data);
+export const selectFollowsUsers = createSelector(selectUserState, (state: UserState): User[] => state.followsUsers.data);
+
+export const selectFollowsUsersLoaded = createSelector(selectUserState, (state: UserState): boolean => state.followsUsers.loaded);

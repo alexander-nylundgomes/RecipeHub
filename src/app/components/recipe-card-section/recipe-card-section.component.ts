@@ -1,8 +1,9 @@
-import { Component, EventEmitter, input, InputSignal, Output } from '@angular/core';
+import { Component, EventEmitter, Input, input, InputSignal, Output } from '@angular/core';
 import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
 import { Recipe } from '../../interfaces/recipe';
 import { Observable } from 'rxjs';
 import { AsyncPipe } from '@angular/common';
+import { IsLikedMap } from '../../interfaces/is-liked-map';
 
 @Component({
   selector: 'app-recipe-card-section',
@@ -15,6 +16,7 @@ export class RecipeCardSectionComponent {
 
   title: InputSignal<String> = input.required();
   recipes: InputSignal<Observable<ReadonlyArray<Recipe>>> = input.required();
+  likes: InputSignal<IsLikedMap> = input.required();
 
   @Output() onNavigateTo: EventEmitter<void> = new EventEmitter();
 }

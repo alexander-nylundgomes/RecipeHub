@@ -2,5 +2,6 @@ export interface User{
 	firstName: string,
 	lastName: string,
 	email: string,
-	id: number
+	id: number,
+	handle: string
 }

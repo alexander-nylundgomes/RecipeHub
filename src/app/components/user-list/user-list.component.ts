@@ -1,19 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, inject, input, InputSignal, OnInit } from '@angular/core';
 import { AvatarComponent } from '../avatar/avatar.component';
+import { User } from '../../interfaces/user';
+import { Store } from '@ngrx/store';
+import { EMPTY, map, Observable, take } from 'rxjs';
+import { selectFollowsUsers } from '../../state/users/users.selectors';
+import { UserActions } from '../../state/users/users.actions';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-user-list',
   standalone: true,
-  imports: [AvatarComponent],
+  imports: [AvatarComponent, AsyncPipe],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit{
+  store: Store = inject(Store);
+  users: InputSignal<User[]> = input.required();
 
-  users: {id: number, firstName: string, lastName: string}[] = [
-    {id: 1, firstName: "Jane", lastName: "Doe"},
-    {id: 2, firstName: "William", lastName: "Doe"},
-    {id: 3, firstName: "Stephan", lastName: "Doe"},
-  ]
+  followsUsers$: Observable<ReadonlyArray<User>> = EMPTY;
 
+  ngOnInit(): void {
+    this.followsUsers$ = this.store.select(selectFollowsUsers)
+  }
+
+  isFollowing(userId: number): Observable<boolean>{
+    return this.followsUsers$.pipe(map(users => users.some(user => user.id === userId)))
+  }
+
+  toggleFollow(user: User){
+    this.isFollowing(user.id).pipe(take(1)).subscribe((follows) => {
+      if(follows){
+        this.store.dispatch(UserActions.unfollowUser({ id: user.id }))
+      }else{
+        this.store.dispatch(UserActions.followUser({ user }))
+      }
+    })
+  }
 }

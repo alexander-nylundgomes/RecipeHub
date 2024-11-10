@@ -1,7 +1,7 @@
 <div class="card p-3 shadow-sm pointer" [class]="size()" (click)="navigateToRecipe()">
 	
 	<div class="image-wrapper position-relative">
-		<img src="/images/recipes/1.jpg" class="card-img-top rounded-2 object-fit-cover" alt="...">
+		<img src="/images/recipes/{{recipe().id}}.jpg" class="card-img-top border rounded-2 object-fit-cover" alt="...">
 	</div>
 	
 	<div class="card-body px-0 pt-2 pb-0 d-flex flex-column">
@@ -15,7 +15,7 @@
 					</div>
 				</div>
 			</div>
-			<i class="bi bi-heart text-primary"></i>
+			<i class="bi text-primary" [class.bi-heart]="!isLiked()" [class.bi-heart-fill]="isLiked()" (click)="toggleLike(); $event.stopPropagation()"></i>
 		</div>
 	
 		<p class="card-text description text-secondary m-0 fs-7">
