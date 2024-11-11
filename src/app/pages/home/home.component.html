@@ -1,0 +1,26 @@
+
+<div class="recipe-wrapper d-flex flex-column w-100 row-gap-4">
+
+    
+    <div class="user d-flex align-items-center column-gap-3 pt-4 px-3">
+        <app-avatar [userId]="(loggedInUser$ | async)?.id || null" size="L"></app-avatar>
+        <div class="title">
+            <p class="m-0 text-secondary lh-1">Welcome back</p>
+            <h1 class="m-0">{{ (loggedInUser$ | async)?.firstName }}</h1>
+        </div>
+    </div>
+
+    <app-in-focus 
+        class="px-3 mb-2"
+        [recipe]="(inFocusRecipe$ | async) || undefined"
+    ></app-in-focus>
+
+    <!-- <app-recipe-card-section class="mb-4" title="Your likes" [likes]="isLikedMap" (onNavigateTo)="navigateToSection('LIKES')"></app-recipe-card-section> -->
+    <app-recipe-card-section 
+        title="All recipes" 
+        [likes]="isLikedMap" 
+        [recipes]="(allRecipes$ | async) || []"
+        [loggedInUserId]="(loggedInUser$ | async)?.id || -1"
+        (onNavigateTo)="router.navigate(['recipes'])"
+    ></app-recipe-card-section>
+</div> 

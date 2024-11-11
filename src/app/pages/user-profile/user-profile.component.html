@@ -4,9 +4,15 @@
 			<button type="button" (click)="location.back()" class="btn btn-light btn-sm align-self-start border">
 				<i class="bi bi-arrow-left fs-6 p-0"></i>
 			</button>
+
+			@if(isLoggedInUserProfile$ | async){
+				<button type="button" (click)="goToSettings()" class="btn btn-light btn-sm align-self-start border">
+					<i class="bi bi-gear-fill fs-6 p-0"></i>
+				</button>
+			}
 		</div>
 
-		<img src="./images/recipes/3.jpg" class="w-100 object-fit-cover" alt="">
+		<img src="./images/user-stripes/{{ userId }}.jpg" class="w-100 object-fit-cover" alt="">
 		<div class="image-overlay bg-light position-absolute w-100 rounded-top-4 shadow"></div>
 	</div>
 
@@ -17,22 +23,30 @@
 			<div class="title-row d-flex column-gap-3 align-items-center">
 				<app-avatar size="L" [userId]="userId"></app-avatar>
 
-				<div class="d-flex flex-column justify-content-center">
+				<div class="d-flex flex-column justify-content-center row-gap-1">
 					<h3 class="m-0 lh-1">{{ user?.firstName }} {{ user?.lastName }}</h3>
 					<p class="text-secondary lh-1 m-0">&#64;janedoe</p>
 				</div>
 
-				<button 
-					class="btn ms-auto" 
-					(click)="toggleFollows()"
-					[class.btn-outline-primary]="(isFollowing() | async)"
-					[class.btn-primary]="!(isFollowing() | async)"
-				>{{ (isFollowing() | async) ? 'Unfollow' : 'Follow' }}</button>
+				@if(!(isLoggedInUserProfile$ | async)){
+					<button 
+						class="btn ms-auto" 
+						(click)="toggleFollows()"
+						[class.btn-outline-primary]="(isFollowing() | async)"
+						[class.btn-primary]="!(isFollowing() | async)"
+					>{{ (isFollowing() | async) ? 'Unfollow' : 'Follow' }}</button>
+				}
 			</div>
 
-			<p class="m-0 text-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ullam magni esse nobis rerum nulla repellendus tenetur cupiditate reprehenderit harum, temporibus libero est consequuntur impedit, excepturi quisquam. Error, facere voluptatem!</p>
+			@if (user?.description) {
+				<p class="m-0 text-secondary">{{ user?.description }}</p>
+			}
 		</div>
 		
-		<app-recipe-card-list [recipes]="(allRecipes$ | async) || []" [likes]="isLikedMap"></app-recipe-card-list>
+		<app-recipe-card-list 
+			[recipes]="(userRecipes$ | async) || []" 
+			[likes]="isLikedMap"
+			[loggedInUserId]="userId"
+		></app-recipe-card-list>
 	</div>
 </div>

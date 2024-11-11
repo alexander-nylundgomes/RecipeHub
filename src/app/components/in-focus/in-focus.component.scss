@@ -8,3 +8,28 @@ img{
 	left: 0;
 	z-index: 100;
 }
+
+.in-focus-wrapper{
+	aspect-ratio: 2 / 1;
+	background: #406a3a;
+	overflow: hidden;
+}
+
+h1.background-text{
+	font-size: 8rem;
+	line-height: 80%;
+	text-align: center;
+	font-weight: 900;
+	margin: 0;
+	background-image: linear-gradient(45deg, rgba(255,255,255,0), rgba(255,255,255,0.20));
+	background-clip: text;
+	opacity: .3;
+	color: transparent;
+}
+
+img.in-focus-plate{
+	aspect-ratio: 1;
+	width: 40%;
+	right: -12.5%;
+	top: -12.5%;
+}

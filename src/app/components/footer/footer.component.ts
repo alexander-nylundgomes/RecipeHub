@@ -47,8 +47,8 @@ export class FooterComponent implements OnInit, OnDestroy{
       this.buttons = [
         {icon: "bi-house-fill", text: "Home", selected: true, url: "/"},
         {icon: "bi-heart-fill", text: "Likes", selected: false, url: `/user/${user?.id}/likes`},
-        {icon: "bi-person-fill", text: "Following", selected: false, url: `/user/${user?.id}/following`},
-        {icon: "bi-gear-fill", text: "Settings", selected: false, url: "/settings"},
+        {icon: "bi-people-fill", text: "Following", selected: false, url: `/user/${user?.id}/following`},
+        {icon: "bi-person-fill", text: "Your profile", selected: false, url: `/user/${user?.id}`},
       ];
 
       this.buttons.forEach((button) => {

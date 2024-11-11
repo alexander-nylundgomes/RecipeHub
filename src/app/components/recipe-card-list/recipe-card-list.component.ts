@@ -15,8 +15,9 @@ import { IsLikedMap } from '../../interfaces/is-liked-map';
   styleUrl: './recipe-card-list.component.scss'
 })
 export class RecipeCardListComponent{
+  
   store: Store = inject(Store);
   recipes: InputSignal<ReadonlyArray<Recipe>> = input.required();
   likes: InputSignal<IsLikedMap> = input.required();
-
+  loggedInUserId: InputSignal<number> = input.required();
 }

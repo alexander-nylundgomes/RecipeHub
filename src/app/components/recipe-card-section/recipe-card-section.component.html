@@ -1,11 +1,16 @@
 
-<div class="title d-flex justify-content-between">
+<div class="title d-flex align-items-end px-3">
 	<h3 class="m-0">{{ title() }}</h3>
-	<p class="m-0 text-primary pointer" (click)="onNavigateTo.emit()">See all</p>
+	<p class="m-0 text-secondary ms-2">- {{ MAX_SHOWING_LENGTH }} of {{ recipes().length }}</p>
+	<p class="m-0 text-primary pointer ms-auto" (click)="onNavigateTo.emit()">See all</p>
 </div>
 
-<div class="recipes d-flex column-gap-3 py-3">
-	@for(recipe of (recipes() | async); track $index){
-		<app-recipe-card [recipe]="recipe" [isLiked]="!!likes()[recipe.id]"></app-recipe-card>
+<div class="recipes d-flex column-gap-3 p-3 hide-scrollbar">
+	@for(recipe of recipes().slice(0, MAX_SHOWING_LENGTH); track $index){
+		<app-recipe-card 
+			[recipe]="recipe" 
+			[isLiked]="!!likes()[recipe.id]"
+			[editable]="(loggedInUserId() === recipe.createdBy.id)"
+		></app-recipe-card>
 	}
 </div>

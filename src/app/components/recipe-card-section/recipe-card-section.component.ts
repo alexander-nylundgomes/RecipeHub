@@ -14,9 +14,16 @@ import { IsLikedMap } from '../../interfaces/is-liked-map';
 })
 export class RecipeCardSectionComponent {
 
+  readonly MAX_SHOWING_LENGTH: number = 8;
+
   title: InputSignal<String> = input.required();
-  recipes: InputSignal<Observable<ReadonlyArray<Recipe>>> = input.required();
+  recipes: InputSignal<ReadonlyArray<Recipe>> = input.required();
   likes: InputSignal<IsLikedMap> = input.required();
+
+
+  // We could inject our userService here and listen to what the logged in user
+  // is, but it's better to do it in the page component because of performance
+  loggedInUserId: InputSignal<number> = input.required();
 
   @Output() onNavigateTo: EventEmitter<void> = new EventEmitter();
 }

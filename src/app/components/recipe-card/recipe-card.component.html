@@ -1,6 +1,20 @@
 <div class="card p-2 shadow-sm pointer" [class]="size()" (click)="navigateToRecipe()">
 	
 	<div class="image-wrapper position-relative">
+		<div class="overlay position-absolute w-100 h-100 p-2 d-flex justify-content-end">
+			@if(editable()){
+				<div class="btn-group">
+					<button type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="$event.stopPropagation();" class="btn btn-light btn-sm align-self-start border">
+						<i class="bi bi-three-dots fs-6 p-0"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" (click)="editRecipe();$event.stopPropagation();">Edit recipe</a></li>
+						<li><a class="dropdown-item text-danger" (click)="deleteRecipe();$event.stopPropagation();">Delete recipe</a></li>
+					</ul>
+				</div>
+			}
+		</div>
+
 		<img src="/images/recipes/{{recipe().id}}.jpg" class="card-img-top border rounded-2 object-fit-cover" alt="...">
 	</div>
 	
@@ -11,16 +25,14 @@
 				<div class="title w-100">
 					<h5 class="m-0 recipe-title">{{ recipe().title }}</h5>
 					<div class="d-flex column-gap-1 align-items-center">
-						<p class="text-secondary fs-7 m-0">By Jane Doe</p>
+						<p class="text-secondary fs-7 m-0">By {{ recipe().createdBy.firstName }} {{ recipe().createdBy.lastName }}</p>
 					</div>
 				</div>
 			</div>
 			<i class="bi text-primary" [class.bi-heart]="!isLiked()" [class.bi-heart-fill]="isLiked()" (click)="toggleLike(); $event.stopPropagation()"></i>
 		</div>
 	
-		<p class="card-text description text-secondary m-0 fs-7">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus dignissim tincidunt. Curabitur eget suscipit.
-		</p>
+		<p class="card-text description text-secondary m-0 fs-7">{{ recipe().description }}</p>
 	
 		<div class="border-top mt-3 pt-2 d-flex align-items-center column-gap-3 row-gap-1 flex-wrap">
 
@@ -31,11 +43,11 @@
 
 			<div class="time d-flex align-items-center column-gap-2 text-secondary me-auto">
 				<i class="bi bi-egg-fried fs-7"></i>
-				<p class="m-0 fs-7">12 st</p>
+				<p class="m-0 fs-7">{{ recipe().ingredients.length }} st</p>
 			</div>
 
 			<div class="time d-flex align-items-center column-gap-1 text-secondary">
-				<p class="m-0 fs-7">4.5</p>
+				<p class="m-0 fs-7">{{ recipe().rating }}</p>
 				<i class="bi bi-star-fill fs-7 text-yellow"></i>
 			</div>
 		</div>

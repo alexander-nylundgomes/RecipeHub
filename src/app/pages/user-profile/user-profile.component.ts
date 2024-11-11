@@ -3,11 +3,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AvatarComponent } from '../../components/avatar/avatar.component';
 import { Recipe } from '../../interfaces/recipe';
-import { EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
+import { combineLatest, EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectRecipes } from '../../state/recipes/recipes.selectors';
+import { selectRecipes, selectRecipesForUser } from '../../state/recipes/recipes.selectors';
 import { RecipeCardListComponent } from '../../components/recipe-card-list/recipe-card-list.component';
-import { selectFollowsUsers, selectLikedRecipes } from '../../state/users/users.selectors';
+import { selectFollowsUsers, selectLikedRecipes, selectLoggedInUser } from '../../state/users/users.selectors';
 import { IsLikedMap } from '../../interfaces/is-liked-map';
 import { User } from '../../interfaces/user';
 import { UserActions } from '../../state/users/users.actions';
@@ -29,17 +29,23 @@ export class UserProfileComponent implements OnInit{
   userService: UserService = inject(UserService);
 
   destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
-  allRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
   likedRecipes$: Observable<ReadonlyArray<number>> = EMPTY;
   followsUsers$: Observable<ReadonlyArray<User>> = EMPTY;
-  
+  isLoggedInUserProfile$: Observable<boolean> = EMPTY;
+  userRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
+
   user?: User = undefined;
   isLikedMap: IsLikedMap = {};
   userId: number = -1;
 
   ngOnInit(): void {
-    this.allRecipes$ = this.store.select(selectRecipes);
-    this.likedRecipes$ = this.store.select(selectLikedRecipes)
+
+    this.userId = Number(this.route.snapshot.params['id']);
+
+    this.likedRecipes$ = this.store.select(selectLikedRecipes);
+    this.followsUsers$ = this.store.select(selectFollowsUsers);
+    this.isLoggedInUserProfile$ = this.store.select(selectLoggedInUser).pipe(map(user => user?.id == this.userId));
+    this.userRecipes$ = this.store.select(selectRecipesForUser(this.userId));
 
     // A change in likes has occurred. Update the map
     this.likedRecipes$.pipe(takeUntil(this.destroyed$)).subscribe((likes) => {
@@ -48,10 +54,6 @@ export class UserProfileComponent implements OnInit{
         this.isLikedMap[likedRecipeId] = true;
       })
     })
-
-    this.userId = this.route.snapshot.params['id'];
-
-    this.followsUsers$ = this.store.select(selectFollowsUsers);
 
     // Since the user probably wont change while we're on the profile page,
     // there is no need to store the user as an observable
@@ -62,6 +64,10 @@ export class UserProfileComponent implements OnInit{
 
   isFollowing(): Observable<boolean>{
     return this.followsUsers$.pipe(map(users => users.some(user => user.id == this.userId)))
+  }
+
+  goToSettings(){
+    this.router.navigate(['settings'])
   }
 
   toggleFollows(){

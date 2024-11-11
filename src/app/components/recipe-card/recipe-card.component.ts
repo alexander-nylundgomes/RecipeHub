@@ -7,6 +7,9 @@ import { EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { selectLikedRecipes } from '../../state/users/users.selectors';
 import { UserActions } from '../../state/users/users.actions';
+import { RecipeActions } from '../../state/recipes/recipes.actions';
+import { AlertService } from '../../services/alert.service';
+import { AlertType } from '../../enums/alert-type';
 
 type Sizes = "S" | "M" | "L" | "FLUID";
 
@@ -22,12 +25,14 @@ export class RecipeCardComponent implements OnDestroy{
   // Injects
   router: Router = inject(Router);
   store: Store = inject(Store);
+  alertService: AlertService = inject(AlertService);
 
   // Inputs
   size: InputSignal<Sizes> = input<Sizes>("M");
   recipe: InputSignal<Recipe> = input.required();
-  isLiked: InputSignal<Boolean> = input.required();
-  
+  isLiked: InputSignal<boolean> = input.required();
+  editable: InputSignal<boolean> = input(false);
+
   destroyed$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
     
 
@@ -39,8 +44,17 @@ export class RecipeCardComponent implements OnDestroy{
     }
   }
 
+  editRecipe(){
+    this.router.navigate(['recipe', this.recipe().id, 'edit'])
+  }
+
+  deleteRecipe(){
+    this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipe().id }));
+    this.alertService.addAlert("Recipe was deleted!", AlertType.SUCCESS)
+  }
+
   navigateToRecipe(){
-    this.router.navigate(['recipe', 1])
+    this.router.navigate(['recipe', this.recipe().id])
   }
 
   ngOnDestroy(): void {

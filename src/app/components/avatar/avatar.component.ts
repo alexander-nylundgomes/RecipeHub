@@ -10,5 +10,5 @@ import { Component, Input, input, InputSignal } from '@angular/core';
 export class AvatarComponent {
 
   size: InputSignal<("S" | "M" | "L")> = input("M" as ("S" | "M" | "L"));
-  userId: InputSignal<number> = input(1);
+  userId: InputSignal<number | null> = input(null as number | null);
 }

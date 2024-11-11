@@ -6,10 +6,20 @@
 
 .fs-7{
 	font-size: .85rem;
+	line-height: 1.25rem;
 }
 
 .text-yellow{color: #ffc107;}
 
 .text-white-75{
 	color: rgba(255, 255, 255, .75) !important;
+}
+
+.hide-scrollbar{
+	-ms-overflow-style: none;  /* IE and Edge */
+  	scrollbar-width: none;  /* Firefox */
+
+	&::-webkit-scrollbar {
+		display: none; /* Chrome, Safari and Opera */
+	}
 }

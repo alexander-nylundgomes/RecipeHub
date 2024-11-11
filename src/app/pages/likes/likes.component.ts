@@ -3,11 +3,12 @@ import { RecipeCardComponent } from '../../components/recipe-card/recipe-card.co
 import { RecipeCardListComponent } from '../../components/recipe-card-list/recipe-card-list.component';
 import { Store } from '@ngrx/store';
 import { combineLatest, defaultIfEmpty, EMPTY, map, Observable, ReplaySubject, takeUntil } from 'rxjs';
-import { selectLikedRecipes } from '../../state/users/users.selectors';
+import { selectLikedRecipes, selectLoggedInUser } from '../../state/users/users.selectors';
 import { IsLikedMap } from '../../interfaces/is-liked-map';
 import { Recipe } from '../../interfaces/recipe';
 import { selectRecipe, selectRecipes } from '../../state/recipes/recipes.selectors';
 import { AsyncPipe } from '@angular/common';
+import { User } from '../../interfaces/user';
 
 @Component({
   selector: 'app-likes',
@@ -19,16 +20,19 @@ import { AsyncPipe } from '@angular/common';
 export class LikesComponent implements OnInit, OnDestroy{
 
   store: Store= inject(Store);
+  
+  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
   likedRecipes$: Observable<ReadonlyArray<number>> = EMPTY;
   allRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
   filteredLikedRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
-  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
+  loggedInUser$: Observable<Readonly<User | undefined>> = EMPTY;
 
   isLikedMap: IsLikedMap = {};
 
   ngOnInit(): void {
     this.likedRecipes$ = this.store.select(selectLikedRecipes)
-    this.allRecipes$ = this.store.select(selectRecipes)
+    this.allRecipes$ = this.store.select(selectRecipes);
+    this.loggedInUser$ = this.store.select(selectLoggedInUser);
 
     // Combine likedRecipes$ and allRecipes$ to get only liked recipes
     this.filteredLikedRecipes$ = combineLatest([this.likedRecipes$, this.allRecipes$]).pipe(

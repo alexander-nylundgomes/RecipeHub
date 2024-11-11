@@ -12,7 +12,7 @@ import { FormArray, FormBuilder, FormGroup, ReactiveFormsModule, Validators } fr
 import { Recipe } from '../../interfaces/recipe';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { selectRecipe } from '../../state/recipes/recipes.selectors';
+import { selectRecipe, selectRecipesLoaded } from '../../state/recipes/recipes.selectors';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
 import { AsyncPipe, Location } from '@angular/common';
 import { RecipeService } from '../../services/recipe.service';
@@ -40,7 +40,7 @@ export class EditRecipeComponent implements OnInit {
   measurements$: Observable<Measurement[]> = EMPTY;
   recipe$: Observable<Readonly<Recipe | undefined>> = EMPTY;
 
-  recipeId: number | null = null;
+  recipeId: number = -1;
 
   form: FormGroup = this.formBuilder.group({
     title: ['', Validators.required],
@@ -50,6 +50,13 @@ export class EditRecipeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.recipeId = Number(this.route.snapshot.paramMap.get('id'));
+    this.store.select(selectRecipesLoaded).subscribe((hasFired) => {
+      if(hasFired){
+        this.recipe$ = this.store.select(selectRecipe(this.recipeId));
+      }
+    })
+
     this.recipe$ = this.route.paramMap.pipe(
       switchMap((params) => {
         this.recipeId = Number(params.get('id'));
@@ -88,12 +95,16 @@ export class EditRecipeComponent implements OnInit {
     if (this.form.valid) {
       this.recipe$.pipe(take(1)).subscribe((recipe) => {
         if (recipe) {
+          const updatedRecipe = {
+            ...recipe,
+            title: this.form.value.title,
+            ingredients: this.form.value.ingredients,
+            steps: this.form.value.steps
+          };
 
-          const updatedRecipe = this.form.value;
-          updatedRecipe.id = this.recipeId;
           this.store.dispatch(RecipeActions.updateRecipe({ recipe: updatedRecipe })) ;
           this.alertService.addAlert("Updated recipe!", AlertType.SUCCESS);
-          this.router.navigate(["recipe", this.recipeId]);
+          this.location.back();
         }else{
           this.alertService.addAlert("Could not save recipe!", AlertType.DANGER);
         }

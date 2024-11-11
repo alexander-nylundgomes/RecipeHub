@@ -1,24 +1,15 @@
-
-<div class="in-focus-wrapper w-100 position-relative shadow">
+<div class="in-focus-wrapper w-100 rounded-2 shadow position-relative">
+	<h1 class="background-text w-100 h-100 d-flex align-items-center justify-content-between position-absolute text-uppercase">{{ recipe()?.title }}</h1>
+	<img class="position-absolute in-focus-plate" src="/images/in-focus-plate.png" alt="">
 	
-	<img class="w-100 object-fit-cover rounded-2" src="/images/in-focus.jpg" alt="">
-	<div class="overlay-transparent w-100 h-100 position-absolute p-3 rounded-2 d-flex flex-column">
-		
-		<div class="top-section d-flex align-items-center mb-2 justify-content-between">
-			<div class="title">
-				<p class="m-0 text-white-75">In focus</p>
-				<h2 class="text-white m-0">Moules Frites</h2>
-			</div>
-
-			<app-avatar class="border rounded-circle"></app-avatar>
-		</div>
-
-		<p class="text-white-75 mb-auto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium iusto officiis libero.</p>
-	
-		<div class="buttons d-flex justify-content-between">
-			<button type="button" class="btn btn-light btn-sm align-self-start"><i class="bi bi-heart text-primary"></i></button>
-
-			<button class="btn btn-primary btn-sm ms-auto">Open recipe</button>
+	<div class="content p-4 d-flex row-gap-1  h-100 flex-column position-relative">
+		<p class="text-white-75 m-0">In focus</p>
+		<h1 class="m-0 text-white">{{ recipe()?.title }}</h1>
+		<p class="m-0 text-white-75 fs-5">{{ recipe()?.description }}</p>
+		<div class="check-out-button position-relative mt-auto pointer d-flex column-gap-3" (click)="checkOut()">
+			<p class="m-0 text-white">Check out</p>
+			<i class="bi bi-arrow-right text-white"></i>
 		</div>
 	</div>
+
 </div>

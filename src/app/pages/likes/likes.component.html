@@ -4,5 +4,9 @@
 		<h1 class="m-0">Your likes</h1>
 	</div>
 
-	<app-recipe-card-list [recipes]="(filteredLikedRecipes$ | async) || []" [likes]="isLikedMap"></app-recipe-card-list>
+	<app-recipe-card-list 
+		[recipes]="(filteredLikedRecipes$ | async) || []" 
+		[likes]="isLikedMap"
+		[loggedInUserId]="(loggedInUser$ | async)?.id || -1"
+	></app-recipe-card-list>
 </div>

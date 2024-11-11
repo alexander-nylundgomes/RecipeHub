@@ -4,10 +4,18 @@
 			<button type="button" (click)="location.back()" class="btn btn-light btn-sm align-self-start border">
 				<i class="bi bi-arrow-left fs-6 p-0"></i>
 			</button>
-		
-			<button type="button" class="btn btn-light btn-sm align-self-start border" (click)="router.navigate(['recipe', recipeId, 'edit'])" >
-				<i class="bi bi-pencil"></i>
-			</button>
+
+			@if(editable$ | async){
+				<div class="btn-group">
+					<button type="button" data-bs-toggle="dropdown" aria-expanded="false" (click)="$event.stopPropagation();" class="btn btn-light btn-sm align-self-start border">
+						<i class="bi bi-three-dots fs-6 p-0"></i>
+					</button>
+					<ul class="dropdown-menu">
+						<li><a class="dropdown-item" (click)="editRecipe();$event.stopPropagation();">Edit recipe</a></li>
+						<li><a class="dropdown-item text-danger" (click)="deleteRecipe();$event.stopPropagation();">Delete recipe</a></li>
+					</ul>
+				</div>
+			}
 		</div>
 
 		<img src="./images/recipes/{{ (recipe$ | async)?.id }}.jpg" class="w-100 object-fit-cover" alt="">
@@ -20,15 +28,15 @@
 			<div class="title-row d-flex justify-content-between align-items-center mb-1">
 				<h2 class="m-0">{{ (recipe$ | async)?.title }}</h2>
 				<div class="rating d-flex column-gap-2 align-items-center">
-					<h3 class="m-0">4.5</h3>
+					<h3 class="m-0">{{ (recipe$ | async)?.rating }}</h3>
 					<i class="bi bi-star-fill fs-4 text-yellow"></i>
 				</div>
 			</div>
 	
 			<div class="recipe-info-row d-flex align-items-center ">
 
-				<app-avatar size="S"></app-avatar>
-				<p class="m-0 text-secondary ms-3 me-auto">Jane Doe</p>
+				<app-avatar size="S" [userId]="(recipe$ | async)?.id || null"></app-avatar>
+				<p class="m-0 text-secondary ms-3 me-auto">{{ (recipe$ | async)?.createdBy?.firstName }} {{ (recipe$ | async)?.createdBy?.lastName }}</p>
 	
 				<i class="bi bi-clock text-secondary me-1"></i>
 				<p class="m-0 text-secondary fs-7 me-3">1 hr 15 mins</p>
@@ -43,9 +51,7 @@
 				<h6 class="m-0 py-1">Description</h6>
 			</li>
 
-			<li class="list-group-item text-secondary">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam finibus dignissim tincidunt. Curabitur eget suscipit.
-			</li>
+			<li class="list-group-item text-secondary">{{ (recipe$ | async)?.description }}</li>
 		</ul>
 
 
@@ -57,23 +63,23 @@
 				<h6 class="m-0 py-1">Ingredients</h6>
 				
 				<div class="servings-count d-flex align-items-center column-gap-2">
-					<i class="bi bi-dash-lg text-primary pointer"></i>
+					<i class="bi bi-dash-lg text-primary pointer" (click)="decrementServings()"></i>
 
 					<div class="d-flex column-gap-2 align-items-end">
-						<h5 class="m-0">2</h5>
-						<p class="m-0 text-secondary fs-7"> servings</p>
+						<h5 class="m-0">{{ servings }}</h5>
+						<p class="m-0 text-secondary fs-7"> {{ servings == 1 ? 'serving' : 'servings' }}</p>
 					</div>
 
-					<i class="bi bi-plus-lg text-primary pointer"></i>
+					<i class="bi bi-plus-lg text-primary pointer" (click)="incrementServings()"></i>
 				</div>
 			</li>
 
 			@for(recipeIngredient of (recipe$ | async)?.ingredients ; track $index){
 				<li class="list-group-item d-flex justify-content-between column-gap-2">
 	
-					<p class="m-0 text-secondary">{{ recipeIngredient.ingredient.name }}</p>
+					<p class="m-0 text-secondary">{{ recipeIngredient.name }}</p>
 					
-					<p class="m-0 ml-a text-secondary">{{ recipeIngredient.amount }} {{ recipeIngredient.measurement.label }} </p>
+					<p class="m-0 ml-a text-secondary">{{ recipeIngredient.amount * servings}} {{ recipeIngredient.measurement.label }} </p>
 				</li>
 			}
 		</ul>
@@ -88,9 +94,9 @@
 			@for(step of (recipe$ | async)?.steps ; track $index){
 				<li class="list-group-item d-flex justify-content-between column-gap-3">
 	
-					<h6 class="m-0 pt-1">{{$index}}</h6>
+					<h6 class="m-0 pt-1">{{$index + 1}}</h6>
 					
-					<p class="m-0 ml-a text-secondary">{{ step.longText }}</p>
+					<p class="m-0 ml-a text-secondary w-100">{{ step.longText }}</p>
 				</li>
 			}
 		</ul>

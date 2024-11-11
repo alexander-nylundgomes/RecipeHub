@@ -1,6 +1,11 @@
 <div class="recipe-card-list mx-auto gap-3">
 
 	@for (recipe of recipes(); track recipe.id) {
-		<app-recipe-card size="FLUID" [recipe]="recipe" [isLiked]="likes()[recipe.id]"></app-recipe-card>
+		<app-recipe-card 
+			size="FLUID" 
+			[recipe]="recipe" 
+			[isLiked]="likes()[recipe.id]"
+			[editable]="loggedInUserId() === recipe.createdBy.id"
+		></app-recipe-card>
 	}
 </div>

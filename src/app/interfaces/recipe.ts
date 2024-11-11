@@ -7,8 +7,9 @@ export interface Recipe {
     title: string,
     steps: Array<RecipeStep>,
     id: number,
-    isLiked: boolean,
     rating: number,
     description: string,
-    createdBy: User
+    createdBy: User,
+    estimatedCookingTime: number,
+    caloriesPerServing: number
 }

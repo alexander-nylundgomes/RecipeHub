@@ -5,51 +5,39 @@
         "description": "Fluffy and delicious pancakes perfect for breakfast.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Flour",
-                    "id": 1
-                },
+                "name": "Flour",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Milk",
-                    "id": 5
-                },
+                "name": "Milk",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Eggs",
-                    "id": 4
-                },
+                "name": "Eggs",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "piece",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Butter",
-                    "id": 6
-                },
+                "name": "Butter",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "tbsp",
-                    "id": 5
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             }
         ],
@@ -63,7 +51,6 @@
                 "longText": "Pour batter onto a hot greased griddle. Cook until bubbles form, then flip and cook until golden."
             }
         ],
-        "isLiked": true,
         "rating": 4.5,
         "createdBy": {
             "firstName": "John",
@@ -79,51 +66,39 @@
         "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Spaghetti",
-                    "id": 9
-                },
+                "name": "Spaghetti",
                 "amount": 200,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Eggs",
-                    "id": 4
-                },
+                "name": "Eggs",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "pieces",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Parmesan Cheese",
-                    "id": 10
-                },
+                "name": "Parmesan Cheese",
                 "amount": 50,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Pancetta",
-                    "id": 11
-                },
+                "name": "Pancetta",
                 "amount": 100,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             }
         ],
@@ -137,7 +112,6 @@
                 "longText": "Mix eggs and cheese in a bowl. Saut\u00e9 pancetta until crispy, add spaghetti, and stir in the egg mixture."
             }
         ],
-        "isLiked": false,
         "rating": 4.7,
         "createdBy": {
             "firstName": "Jane",
@@ -153,51 +127,39 @@
         "description": "Classic chocolate chip cookies with a crispy edge and chewy center.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Butter",
-                    "id": 6
-                },
+                "name": "Butter",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Sugar",
-                    "id": 2
-                },
+                "name": "Sugar",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Flour",
-                    "id": 1
-                },
+                "name": "Flour",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cups",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Chocolate Chips",
-                    "id": 12
-                },
+                "name": "Chocolate Chips",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             }
         ],
@@ -211,7 +173,6 @@
                 "longText": "Place dough on a baking sheet and bake at 350\u00b0F for 10-12 minutes until golden."
             }
         ],
-        "isLiked": true,
         "rating": 4.9,
         "createdBy": {
             "firstName": "John",
@@ -227,51 +188,39 @@
         "description": "Creamy and comforting chicken alfredo pasta.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Fettuccine",
-                    "id": 13
-                },
+                "name": "Fettuccine",
                 "amount": 200,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Chicken Breast",
-                    "id": 14
-                },
+                "name": "Chicken Breast",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "piece",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Parmesan Cheese",
-                    "id": 10
-                },
+                "name": "Parmesan Cheese",
                 "amount": 50,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Cream",
-                    "id": 15
-                },
+                "name": "Cream",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             }
         ],
@@ -285,7 +234,6 @@
                 "longText": "Cook chicken and slice, then simmer with cream and Parmesan cheese until thickened. Add pasta and mix."
             }
         ],
-        "isLiked": true,
         "rating": 4.6,
         "createdBy": {
             "firstName": "Jane",
@@ -301,51 +249,39 @@
         "description": "A healthy vegetable stir fry with a mix of colorful veggies.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Broccoli",
-                    "id": 16
-                },
+                "name": "Broccoli",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Bell Peppers",
-                    "id": 17
-                },
+                "name": "Bell Peppers",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "piece",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Carrot",
-                    "id": 18
-                },
+                "name": "Carrot",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "piece",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Soy Sauce",
-                    "id": 19
-                },
+                "name": "Soy Sauce",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "tbsp",
-                    "id": 5
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             }
         ],
@@ -359,7 +295,6 @@
                 "longText": "Saut\u00e9 vegetables in a pan with oil and soy sauce until tender."
             }
         ],
-        "isLiked": false,
         "rating": 4.4,
         "createdBy": {
             "firstName": "John",
@@ -375,51 +310,39 @@
         "description": "Moist and delicious banana bread.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Bananas",
-                    "id": 20
-                },
+                "name": "Bananas",
                 "amount": 3,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "pieces",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Flour",
-                    "id": 1
-                },
+                "name": "Flour",
                 "amount": 1.5,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cups",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Sugar",
-                    "id": 2
-                },
+                "name": "Sugar",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Butter",
-                    "id": 6
-                },
+                "name": "Butter",
                 "amount": 0.5,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             }
         ],
@@ -433,7 +356,6 @@
                 "longText": "Pour into a loaf pan and bake at 350\u00b0F for 50 minutes."
             }
         ],
-        "isLiked": true,
         "rating": 4.8,
         "createdBy": {
             "firstName": "Jane",
@@ -449,51 +371,39 @@
         "description": "Classic Caesar salad with crisp romaine, croutons, and Caesar dressing.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Romaine Lettuce",
-                    "id": 21
-                },
+                "name": "Romaine Lettuce",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "head",
-                    "id": 6
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Parmesan Cheese",
-                    "id": 10
-                },
+                "name": "Parmesan Cheese",
                 "amount": 30,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Croutons",
-                    "id": 22
-                },
+                "name": "Croutons",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Caesar Dressing",
-                    "id": 23
-                },
+                "name": "Caesar Dressing",
                 "amount": 0.5,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             }
         ],
@@ -503,7 +413,6 @@
                 "longText": "Chop lettuce and mix with Parmesan, croutons, and Caesar dressing."
             }
         ],
-        "isLiked": false,
         "rating": 4.3,
         "createdBy": {
             "firstName": "John",
@@ -519,51 +428,39 @@
         "description": "Mexican-style tacos with seasoned ground beef and toppings.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Ground Beef",
-                    "id": 24
-                },
+                "name": "Ground Beef",
                 "amount": 200,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Taco Shells",
-                    "id": 25
-                },
+                "name": "Taco Shells",
                 "amount": 3,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "pieces",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Lettuce",
-                    "id": 21
-                },
+                "name": "Lettuce",
                 "amount": 0.5,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "head",
-                    "id": 6
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Cheese",
-                    "id": 10
-                },
+                "name": "Cheese",
                 "amount": 50,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             }
         ],
@@ -577,7 +474,6 @@
                 "longText": "Fill taco shells with beef, lettuce, and cheese."
             }
         ],
-        "isLiked": true,
         "rating": 4.7,
         "createdBy": {
             "firstName": "Jane",
@@ -593,39 +489,30 @@
         "description": "Quick and easy garlic butter shrimp.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Shrimp",
-                    "id": 26
-                },
+                "name": "Shrimp",
                 "amount": 200,
                 "measurement": {
-                    "measurementType": "Weight",
-                    "label": "grams",
-                    "id": 2
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Garlic",
-                    "id": 27
-                },
+                "name": "Garlic",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "cloves",
-                    "id": 7
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Butter",
-                    "id": 6
-                },
+                "name": "Butter",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "tbsp",
-                    "id": 5
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             }
         ],
@@ -635,7 +522,6 @@
                 "longText": "Cook shrimp with garlic in butter until pink and tender."
             }
         ],
-        "isLiked": false,
         "rating": 4.6,
         "createdBy": {
             "firstName": "John",
@@ -651,51 +537,39 @@
         "description": "Golden and crispy French toast, perfect for breakfast.",
         "ingredients": [
             {
-                "ingredient": {
-                    "name": "Bread",
-                    "id": 28
-                },
+                "name": "Bread",
                 "amount": 2,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "slices",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Eggs",
-                    "id": 4
-                },
+                "name": "Eggs",
                 "amount": 1,
                 "measurement": {
-                    "measurementType": "Count",
-                    "label": "piece",
-                    "id": 4
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Milk",
-                    "id": 5
-                },
+                "name": "Milk",
                 "amount": 0.25,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "cup",
-                    "id": 1
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
                 }
             },
             {
-                "ingredient": {
-                    "name": "Cinnamon",
-                    "id": 29
-                },
+                "name": "Cinnamon",
                 "amount": 0.5,
                 "measurement": {
-                    "measurementType": "Volume",
-                    "label": "tsp",
-                    "id": 3
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
                 }
             }
         ],
@@ -709,8 +583,354 @@
                 "longText": "Dip bread slices into the mixture and cook on a skillet until golden brown on both sides."
             }
         ],
+        "rating": 4.8,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 11,
+        "title": "Pesto Pasta",
+        "description": "Simple and delicious pasta tossed in fresh basil pesto.",
+        "ingredients": [
+            {
+                "name": "Pasta",
+                "amount": 200,
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
+            },
+            {
+                "name": "Basil",
+                "amount": 1,
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
+                }
+            },
+            {
+                "name": "Pine Nuts",
+                "amount": 2,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Parmesan Cheese",
+                "amount": 50,
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
+            },
+            {
+                "name": "Olive Oil",
+                "amount": 0.25,
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
+                }
+            },
+            {
+                "name": "Garlic",
+                "amount": 1,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Cook Pasta",
+                "longText": "Boil pasta in salted water until al dente, then drain."
+            },
+            {
+                "shortText": "Make Pesto",
+                "longText": "Blend basil, pine nuts, Parmesan, garlic, and olive oil in a food processor until smooth."
+            },
+            {
+                "shortText": "Combine and Serve",
+                "longText": "Toss pasta with pesto sauce until well coated. Serve with additional Parmesan on top if desired."
+            }
+        ],
+        "rating": 4.7,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 12,
+        "title": "Margherita Pizza",
+        "description": "Classic Margherita pizza with fresh mozzarella, tomatoes, and basil.",
+        "ingredients": [
+            {
+                "name": "Pizza Dough",
+                "amount": 1,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Tomato Sauce",
+                "amount": 0.5,
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
+                }
+            },
+            {
+                "name": "Mozzarella Cheese",
+                "amount": 100,
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
+            },
+            {
+                "name": "Fresh Basil",
+                "amount": 5,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Preheat Oven",
+                "longText": "Preheat oven to 475\u00b0F (245\u00b0C)."
+            },
+            {
+                "shortText": "Assemble Pizza",
+                "longText": "Spread tomato sauce over dough, add mozzarella and basil."
+            },
+            {
+                "shortText": "Bake",
+                "longText": "Bake for 10-12 minutes until crust is golden and cheese is bubbly."
+            }
+        ],
         "isLiked": true,
         "rating": 4.8,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 13,
+        "title": "Tiramisu",
+        "description": "A classic Italian dessert made with coffee-soaked ladyfingers and mascarpone cream.",
+        "ingredients": [
+            {
+                "name": "Ladyfingers",
+                "amount": 24,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Mascarpone Cheese",
+                "amount": 250,
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
+            },
+            {
+                "name": "Espresso",
+                "amount": 1,
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
+                }
+            },
+            {
+                "name": "Cocoa Powder",
+                "amount": 2,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Prepare Coffee",
+                "longText": "Brew espresso and let cool."
+            },
+            {
+                "shortText": "Layer Ingredients",
+                "longText": "Dip ladyfingers in espresso, layer with mascarpone mixture, and repeat."
+            },
+            {
+                "shortText": "Chill and Serve",
+                "longText": "Refrigerate for 4 hours, sprinkle cocoa powder on top before serving."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.9,
+        "createdBy": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "email": "jane@example.com",
+            "id": 2,
+            "handle": "@janesmith"
+        }
+    },
+    {
+        "id": 14,
+        "title": "Greek Salad",
+        "description": "A fresh and vibrant salad with cucumbers, tomatoes, olives, and feta.",
+        "ingredients": [
+            {
+                "name": "Cucumber",
+                "amount": 1,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Tomatoes",
+                "amount": 2,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Olives",
+                "amount": 0.5,
+                "measurement": {
+                    "id": 6,
+                    "measurementType": "VOLUME",
+                    "label": "cup"
+                }
+            },
+            {
+                "name": "Feta Cheese",
+                "amount": 100,
+                "measurement": {
+                    "id": 1,
+                    "measurementType": "WEIGHT",
+                    "label": "grams"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Chop Vegetables",
+                "longText": "Chop cucumber and tomatoes into bite-sized pieces."
+            },
+            {
+                "shortText": "Assemble Salad",
+                "longText": "Combine cucumber, tomatoes, olives, and feta in a bowl and mix."
+            },
+            {
+                "shortText": "Serve",
+                "longText": "Drizzle with olive oil and sprinkle with salt to taste before serving."
+            }
+        ],
+        "isLiked": false,
+        "rating": 4.5,
+        "createdBy": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "email": "john@example.com",
+            "id": 1,
+            "handle": "@johndoe"
+        }
+    },
+    {
+        "id": 15,
+        "title": "Avocado Toast",
+        "description": "Quick and easy avocado toast with a sprinkle of chili flakes.",
+        "ingredients": [
+            {
+                "name": "Bread",
+                "amount": 1,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Avocado",
+                "amount": 0.5,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Salt",
+                "amount": 0.25,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            },
+            {
+                "name": "Chili Flakes",
+                "amount": 0.25,
+                "measurement": {
+                    "id": 3,
+                    "measurementType": "PIECE",
+                    "label": "pieces"
+                }
+            }
+        ],
+        "steps": [
+            {
+                "shortText": "Toast Bread",
+                "longText": "Toast the bread slice until golden brown."
+            },
+            {
+                "shortText": "Mash Avocado",
+                "longText": "Scoop avocado onto toast and mash with a fork."
+            },
+            {
+                "shortText": "Add Toppings",
+                "longText": "Sprinkle salt and chili flakes on top before serving."
+            }
+        ],
+        "isLiked": true,
+        "rating": 4.6,
         "createdBy": {
             "firstName": "Jane",
             "lastName": "Smith",

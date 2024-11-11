@@ -5,23 +5,28 @@
         "label": "grams"
     },
     {
-        "id": 7,
+        "id": 2,
         "measurementType": "VOLUME",
         "label": "milliliters"
     },
     {
-        "id": 4,
+        "id": 3,
         "measurementType": "PIECE",
         "label": "pieces"
     },
     {
-        "id": 9,
+        "id": 4,
         "measurementType": "VOLUME",
         "label": "tablespoons"
     },
     {
-        "id": 18,
+        "id": 5,
         "measurementType": "VOLUME",
         "label": "teaspoon"
+    },
+    {
+        "id": 6,
+        "measurementType": "VOLUME",
+        "label": "cup"
     }
 ]
