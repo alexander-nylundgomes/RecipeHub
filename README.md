@@ -1,27 +1,27 @@
 # RecipeHub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.10.
+RecipeHub is a frontend application for creating, sharing, and exploring user-generated recipes. Built with Angular, this project showcases advanced state management, optimized component performance, and CI/CD integration with Azure DevOps.
 
-## Development server
+## Technologies Used
+- Angular 18: Latest stable version, utilizing the latest framework features.
+- NgRx: State management to handle application data in a scalable and maintainable way.
+- Bootstrap: Responsive design to enhance user interface.
+- YAML: Used in pipeline configurations for continuous integration.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Project Highlights
 
-## Code scaffolding
+### Focus on State Management
+The primary focus of RecipeHub was to deepen my understanding of Angular’s state management via NgRx. This project employs NgRx to manage and organize complex application state efficiently, especially useful for components requiring shared data across the app.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Reactive Forms
+In implementing features like the edit-recipe component, I explored Angular's reactive forms to enable a dynamic and responsive user experience. This component serves as a robust example of handling complex form interactions in Angular.
 
-## Build
+### Continuous Integration with Azure DevOps
+To automate workflows, I integrated Azure DevOps, configuring two pipelines that can be triggered from a self-hosted agent on my local machine. This setup provided valuable experience in CI/CD, allowing for rapid feedback during development.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Angular Signals
+RecipeHub is built on Angular 18, incorporating signals—a recent addition that enables a more responsive, reactive approach to data flow within Angular components.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Challenges and Solutions
+Optimizing Recipe-Card Component Performance
+Initially, each recipe-card component independently handled like status checks, creating a potential performance bottleneck as the application scaled. To address this, I implemented a centralized IsLikedMap interface, which manages like statuses efficiently. Now, a single store subscription per page loads data, feeding boolean values through input signals to individual cards. This optimized approach significantly reduced component subscriptions and improved performance.
