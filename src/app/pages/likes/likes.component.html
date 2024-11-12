@@ -1,12 +1,16 @@
 
-<div class="like-wrapper mx-auto p-3">
+<div class="like-wrapper mx-auto p-3 d-flex flex-column h-100">
 	<div class="title mb-3">
 		<h1 class="m-0">Your likes</h1>
 	</div>
 
-	<app-recipe-card-list 
-		[recipes]="(filteredLikedRecipes$ | async) || []" 
-		[likes]="isLikedMap"
-		[loggedInUserId]="(loggedInUser$ | async)?.id || -1"
-	></app-recipe-card-list>
+	@if(likedRecipesSnapshot.length > 0){		
+		<app-recipe-card-list 
+			[recipes]="likedRecipesSnapshot" 
+			[likes]="isLikedMap"
+			[loggedInUserId]="(loggedInUser$ | async)?.id || -1"
+		></app-recipe-card-list>
+	} @else {
+		<p class="text-center w-100 text-secondary my-auto">You currently have not liked any recipes</p>
+	}
 </div>

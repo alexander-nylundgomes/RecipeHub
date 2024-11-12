@@ -1,8 +1,13 @@
 
-<div class="following-wrapper p-3 w-100 h-100">
+<div class="following-wrapper p-3 w-100 h-100 d-flex flex-column">
 	<div class="title mb-3">
 		<h1 class="m-0">Following</h1>
 	</div>
 
-	<app-user-list [users]="followsUsersSnapshot"></app-user-list>
+	@if(followsUsersSnapshot.length > 0){
+		<app-user-list [users]="followsUsersSnapshot"></app-user-list>
+	} @else{
+		<p class="text-center w-100 text-secondary my-auto">You are currently not following anyone</p>
+	}
+
 </div>

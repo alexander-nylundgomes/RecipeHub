@@ -9,3 +9,4 @@ export const selectLikedRecipes = createSelector(selectUserState, (state: UserSt
 export const selectFollowsUsers = createSelector(selectUserState, (state: UserState): User[] => state.followsUsers.data);
 
 export const selectFollowsUsersLoaded = createSelector(selectUserState, (state: UserState): boolean => state.followsUsers.loaded);
+export const selectLikedRecipesLoaded = createSelector(selectUserState, (state: UserState): boolean => state.likedRecipes.loaded);
