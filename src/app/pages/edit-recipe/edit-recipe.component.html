@@ -6,46 +6,64 @@
 		</button>
 	</div>
 
-	<div class="title rounded-2 border p-3 shadow-sm">
-		<input class="form-control form-control-lg" formControlName="title" type="text">
-	</div>
+	<ul class="list-group shadow-sm">
 
-	<ul class="list-group" formArrayName="ingredients">
-		@for(ingredient of ingredients.controls; track ingredient.value.name;){
-			<li class="list-group-item d-flex justify-content-between shadow-sm column-gap-2" [formGroupName]="$index">
+		<li class="list-group-item">
+			<b class="m-0">Title</b>
+		</li>
 
-				<input class="form-control form-control-sm" formControlName="name" type="text">
-				
-				<input class="form-control form-control-sm" formControlName="amount" type="text">
+		<li class="list-group-item">
+			<input class="form-control" formControlName="title" type="text">
+		</li>
+	</ul>
 
-				<select  [compareWith]="compareFn"  class="form-select form-select-sm" formControlName="measurement" >
-					@for(measurement of (measurements$ | async); track $index;){
-						<option [ngValue]="measurement">{{ measurement.label }}</option>
-					}
-				</select>
+	<ul class="list-group shadow-sm" formArrayName="ingredients">
 
-				<button class="btn btn-danger btn-sm" type="button" (click)="removeIngredient($index)">
-					<i class="bi bi-trash fs-6 p-0"></i>
-				</button>
-			</li>
-		}
+		<li class="list-group-item d-flex justify-content-between">
+			<b class="m-0">Ingredients</b>
+			<button class="btn btn-primary btn-sm" type="button" (click)="addIngredient()">
+				<i class="bi bi-plus-lg"></i>
+			</button>
+		</li>
 
-		@if(ingredients.controls.length > 0){
-			<li class="list-group-item d-grid">
-				<button class="btn btn-primary " type="button" (click)="addIngredient()">Add ingredient</button>
-			</li>
-		} @else {
+		<li *ngFor="let ingredient of ingredients.controls; trackBy: trackById; let ingredientIndex = index" class="list-group-item d-flex justify-content-between column-gap-2" [formGroupName]="ingredientIndex">
+
+			<input class="form-control form-control-sm" formControlName="name" type="text">
+			
+			<input class="form-control form-control-sm" formControlName="amount" type="text">
+
+			<select  [compareWith]="compareFn"  class="form-select form-select-sm" formControlName="measurement" >
+				@for(measurement of (measurements$ | async); track $index;){
+					<option [ngValue]="measurement">{{ measurement.label }}</option>
+				}
+			</select>
+
+			<button class="btn btn-light btn-sm border" type="button" (click)="removeIngredient(ingredientIndex)">
+				<i class="bi bi-trash text-danger fs-6 p-0"></i>
+			</button>
+		</li>
+
+		@if(ingredients.controls.length == 0){
 			<p class="text-center rounded-2 border p-3 shadow-sm py-4 w-100">No ingredients for this recipe registered</p>
 		}
 	</ul>
 
-	<div formArrayName="steps" class="steps d-flex flex-column row-gap-2">
-		@for(step of steps.controls; track $index; let stepIndex = $index){
-			<div class="p-2 border rounded-2 shadow-sm" [formGroupName]="stepIndex">
-				<textarea class="m-0 form-control" formControlName="longText" rows="3"></textarea>
-			</div>
-		} 
-	</div>
+	<ul class="list-group shadow-sm" formArrayName="steps">
+		<li class="list-group-item d-flex justify-content-between">
+			<b class="m-0">Steps</b>
+			<button class="btn btn-primary btn-sm" type="button" (click)="addStep()">
+				<i class="bi bi-plus-lg"></i>
+			</button>
+		</li>
+
+		<li *ngFor="let step of steps.controls; trackBy: trackById; let stepIndex = index" class="list-group-item d-flex justify-content-between column-gap-2 align-items-center">
+			<textarea class="m-0 form-control" [formControl]="step" rows="2"></textarea>
+
+			<button class="btn btn-light border btn-sm" type="button" (click)="removeStep(stepIndex)">
+				<i class="bi bi-trash text-danger fs-6 p-0"></i>
+			</button>
+		</li>
+	</ul>
 
 	<button class="btn btn-primary" type="submit">Save</button>
 </form>

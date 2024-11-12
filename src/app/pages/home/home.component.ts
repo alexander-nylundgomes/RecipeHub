@@ -1,17 +1,12 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
-import { EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
+import { EMPTY, Observable, ReplaySubject, takeUntil } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { AsyncPipe } from '@angular/common';
-import { RecipeService } from '../../services/recipe.service';
-import { RecipeActions, RecipeApiActions } from '../../state/recipes/recipes.actions';
-import { RecipeItemComponent } from '../../components/recipe-item/recipe-item.component';
 import { selectRecipe, selectRecipes } from '../../state/recipes/recipes.selectors';
 import { Router } from '@angular/router';
-import { RecipeCardComponent } from '../../components/recipe-card/recipe-card.component';
 import { RecipeCardSectionComponent } from '../../components/recipe-card-section/recipe-card-section.component';
 import { InFocusComponent } from '../../components/in-focus/in-focus.component';
-import { UserService } from '../../services/user.service';
 import { User } from '../../interfaces/user';
 import { selectLikedRecipes, selectLoggedInUser } from '../../state/users/users.selectors';
 import { IsLikedMap } from '../../interfaces/is-liked-map';
@@ -20,7 +15,7 @@ import { AvatarComponent } from '../../components/avatar/avatar.component';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [AsyncPipe, RecipeItemComponent, RecipeCardSectionComponent, InFocusComponent, AvatarComponent],
+  imports: [AsyncPipe, RecipeCardSectionComponent, InFocusComponent, AvatarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
@@ -32,15 +27,17 @@ export class HomeComponent implements OnInit, OnDestroy{
   allRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
   likedRecipes$: Observable<ReadonlyArray<number>> = EMPTY;
   loggedInUser$: Observable<User | undefined> = EMPTY;
-  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
   inFocusRecipe$: Observable<Readonly<Recipe | undefined>> = EMPTY;
+
+  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
+  
   isLikedMap: IsLikedMap = {};
   
   ngOnInit(): void {
-    this.allRecipes$ = this.store.select(selectRecipes);
-    this.likedRecipes$ = this.store.select(selectLikedRecipes);
-    this.loggedInUser$ = this.store.select(selectLoggedInUser);
-    this.inFocusRecipe$ = this.store.select(selectRecipe(11));
+    this.allRecipes$ = this.store.select(selectRecipes).pipe(takeUntil(this.destroyed$));
+    this.likedRecipes$ = this.store.select(selectLikedRecipes).pipe(takeUntil(this.destroyed$));
+    this.loggedInUser$ = this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$));
+    this.inFocusRecipe$ = this.store.select(selectRecipe(11)).pipe(takeUntil(this.destroyed$));
 
     // A change in likes has occurred. Update the map
     this.likedRecipes$.pipe(takeUntil(this.destroyed$)).subscribe((likes) => {
@@ -52,7 +49,7 @@ export class HomeComponent implements OnInit, OnDestroy{
   }
 
   ngOnDestroy(): void {
-      this.destroyed$.next(true);
-      this.destroyed$.complete();
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 }

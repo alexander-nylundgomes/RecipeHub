@@ -1,8 +1,8 @@
-import { Component, inject, input, InputSignal, OnInit } from '@angular/core';
+import { Component, inject, input, InputSignal, OnDestroy, OnInit } from '@angular/core';
 import { AvatarComponent } from '../avatar/avatar.component';
 import { User } from '../../interfaces/user';
 import { Store } from '@ngrx/store';
-import { EMPTY, map, Observable, take } from 'rxjs';
+import { EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
 import { selectFollowsUsers } from '../../state/users/users.selectors';
 import { UserActions } from '../../state/users/users.actions';
 import { AsyncPipe } from '@angular/common';
@@ -15,14 +15,17 @@ import { Router } from '@angular/router';
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.scss'
 })
-export class UserListComponent implements OnInit{
+export class UserListComponent implements OnInit, OnDestroy{
+  
   store: Store = inject(Store);
   users: InputSignal<User[]> = input.required();
   router: Router = inject(Router);
   followsUsers$: Observable<ReadonlyArray<User>> = EMPTY;
 
+  destroyed$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
+
   ngOnInit(): void {
-    this.followsUsers$ = this.store.select(selectFollowsUsers)
+    this.followsUsers$ = this.store.select(selectFollowsUsers).pipe(takeUntil(this.destroyed$))
   }
 
   isFollowing(userId: number): Observable<boolean>{
@@ -41,5 +44,10 @@ export class UserListComponent implements OnInit{
         this.store.dispatch(UserActions.followUser({ user }))
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 }

@@ -1,4 +1,4 @@
-import { Component, input, InputSignal, Signal } from '@angular/core';
+import { Component, inject, input, InputSignal, Signal } from '@angular/core';
 import { Recipe } from '../../interfaces/recipe';
 import { Store } from '@ngrx/store';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
@@ -14,13 +14,12 @@ import { AlertType } from '../../enums/alert-type';
   styleUrl: './recipe-item.component.scss'
 })
 export class RecipeItemComponent {
-  recipeItem: InputSignal<Recipe> = input.required();
   
-  constructor(
-    private store: Store,
-    private router: Router,
-    private alertService: AlertService
-  ){}
+  store: Store = inject(Store);
+  router: Router = inject(Router);
+  alertService: AlertService = inject(AlertService);
+  
+  recipeItem: InputSignal<Recipe> = input.required();
 
   deleteRecipe(){
     this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipeItem().id}));

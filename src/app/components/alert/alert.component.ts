@@ -11,7 +11,9 @@ import { NgClass } from '@angular/common';
   styleUrl: './alert.component.scss'
 })
 export class AlertComponent {
+  
   alert: InputSignal<Alert> = input.required<Alert>();
   @Output() onRemove = new EventEmitter<void>();
   readonly AlertType = AlertType;
+
 }

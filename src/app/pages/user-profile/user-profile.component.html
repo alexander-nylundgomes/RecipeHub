@@ -5,7 +5,7 @@
 				<i class="bi bi-arrow-left fs-6 p-0"></i>
 			</button>
 
-			@if(isLoggedInUserProfile$ | async){
+			@if((loggedInUser$ | async)?.id === userId){
 				<button type="button" (click)="goToSettings()" class="btn btn-light btn-sm align-self-start border">
 					<i class="bi bi-gear-fill fs-6 p-0"></i>
 				</button>
@@ -25,10 +25,10 @@
 
 				<div class="d-flex flex-column justify-content-center row-gap-1">
 					<h3 class="m-0 lh-1">{{ user?.firstName }} {{ user?.lastName }}</h3>
-					<p class="text-secondary lh-1 m-0">&#64;janedoe</p>
+					<p class="text-secondary lh-1 m-0">&#64;{{ user?.handle}}</p>
 				</div>
 
-				@if(!(isLoggedInUserProfile$ | async)){
+				@if((loggedInUser$ | async)?.id !== userId){
 					<button 
 						class="btn ms-auto" 
 						(click)="toggleFollows()"
@@ -38,15 +38,13 @@
 				}
 			</div>
 
-			@if (user?.description) {
-				<p class="m-0 text-secondary">{{ user?.description }}</p>
-			}
+			<p class="m-0 text-secondary">{{ user?.bio }}</p>
 		</div>
 		
 		<app-recipe-card-list 
 			[recipes]="(userRecipes$ | async) || []" 
 			[likes]="isLikedMap"
-			[loggedInUserId]="userId"
+			[loggedInUserId]="(loggedInUser$ | async)?.id || -1"
 		></app-recipe-card-list>
 	</div>
 </div>

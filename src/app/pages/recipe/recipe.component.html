@@ -36,13 +36,13 @@
 			<div class="recipe-info-row d-flex align-items-center ">
 
 				<app-avatar size="S" [userId]="(recipe$ | async)?.id || null"></app-avatar>
-				<p class="m-0 text-secondary ms-3 me-auto">{{ (recipe$ | async)?.createdBy?.firstName }} {{ (recipe$ | async)?.createdBy?.lastName }}</p>
+				<p class="m-0 text-secondary ms-2 me-auto">{{ (recipe$ | async)?.createdBy?.firstName }} {{ (recipe$ | async)?.createdBy?.lastName }}</p>
 	
 				<i class="bi bi-clock text-secondary me-1"></i>
-				<p class="m-0 text-secondary fs-7 me-3">1 hr 15 mins</p>
+				<p class="m-0 text-secondary fs-7 me-3">{{ (recipe$ | async)?.estimatedCookingTime }}</p>
 	
 				<i class="bi bi-fire text-secondary me-1"></i>
-				<p class="m-0 text-secondary fs-7">240 cals</p>
+				<p class="m-0 text-secondary fs-7">{{ (recipe$ | async)?.caloriesPerServing }} cals</p>
 			</div>
 		</div>
 		
@@ -96,7 +96,7 @@
 	
 					<h6 class="m-0 pt-1">{{$index + 1}}</h6>
 					
-					<p class="m-0 ml-a text-secondary w-100">{{ step.longText }}</p>
+					<p class="m-0 ml-a text-secondary w-100">{{ step }}</p>
 				</li>
 			}
 		</ul>

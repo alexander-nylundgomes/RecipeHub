@@ -18,27 +18,29 @@ import { User } from '../../interfaces/user';
 })
 export class RecipesComponent implements OnInit, OnDestroy{
 
+  store: Store = inject(Store);
+  
   allRecipes$: Observable<ReadonlyArray<Recipe>> = EMPTY;
   likedRecipes$: Observable<ReadonlyArray<number>> = EMPTY;
-  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
-  isLikedMap: IsLikedMap = {};
   loggedInUser$: Observable<User | undefined> = EMPTY;
 
-  store: Store = inject(Store);
+  destroyed$: ReplaySubject<Boolean> = new ReplaySubject<Boolean>();
+  
+  isLikedMap: IsLikedMap = {};
 
   ngOnInit(): void {
-    this.allRecipes$ = this.store.select(selectRecipes);
-    this.likedRecipes$ = this.store.select(selectLikedRecipes);
-    this.loggedInUser$ = this.store.select(selectLoggedInUser);
+    this.allRecipes$ = this.store.select(selectRecipes).pipe(takeUntil(this.destroyed$));
+    this.likedRecipes$ = this.store.select(selectLikedRecipes).pipe(takeUntil(this.destroyed$));
+    this.loggedInUser$ = this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$));
 
     // A change in likes has occurred. Update the map
-    this.likedRecipes$.pipe(takeUntil(this.destroyed$)).subscribe((likes) => {
+    this.likedRecipes$.subscribe((likes) => {
       this.isLikedMap = {};
       likes.forEach((likedRecipeId) => {
         this.isLikedMap[likedRecipeId] = true;
       })
     })
-}
+  }
   
   ngOnDestroy(): void {
     this.destroyed$.next(true);

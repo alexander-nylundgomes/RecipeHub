@@ -18,13 +18,14 @@ import { UserActions } from '../../state/users/users.actions';
   styleUrl: './settings.component.scss'
 })
 export class SettingsComponent implements OnInit, OnDestroy{
-  loggedInUser$: Observable<User | undefined> = EMPTY; 
-  destroyed$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
-  
+
   store: Store = inject(Store);
   formBuilder: FormBuilder = inject(FormBuilder);
   alertService: AlertService = inject(AlertService)
 
+  loggedInUser$: Observable<User | undefined> = EMPTY; 
+  destroyed$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
+  
   form: FormGroup = this.formBuilder.group({
     firstName: ['', Validators.required],
     lastName: ['', Validators.required],
@@ -34,7 +35,7 @@ export class SettingsComponent implements OnInit, OnDestroy{
   editMode: boolean = false;
 
   ngOnInit(): void {
-    this.loggedInUser$ = this.store.select(selectLoggedInUser);
+    this.loggedInUser$ = this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$));
   }
 
   toggleEditMode(toggledOn: boolean){

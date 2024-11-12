@@ -1,11 +1,8 @@
 import { Component, inject, input, InputSignal, OnDestroy, OnInit } from '@angular/core';
-import { AvatarComponent } from '../avatar/avatar.component';
 import { Router } from '@angular/router';
 import { Recipe } from '../../interfaces/recipe';
-import { AsyncPipe } from '@angular/common';
-import { EMPTY, map, Observable, ReplaySubject, take, takeUntil } from 'rxjs';
+import { ReplaySubject } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { selectLikedRecipes } from '../../state/users/users.selectors';
 import { UserActions } from '../../state/users/users.actions';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
 import { AlertService } from '../../services/alert.service';
@@ -16,18 +13,16 @@ type Sizes = "S" | "M" | "L" | "FLUID";
 @Component({
   selector: 'app-recipe-card',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [],
   templateUrl: './recipe-card.component.html',
   styleUrl: './recipe-card.component.scss'
 })
 export class RecipeCardComponent implements OnDestroy{
 
-  // Injects
   router: Router = inject(Router);
   store: Store = inject(Store);
   alertService: AlertService = inject(AlertService);
 
-  // Inputs
   size: InputSignal<Sizes> = input<Sizes>("M");
   recipe: InputSignal<Recipe> = input.required();
   isLiked: InputSignal<boolean> = input.required();

@@ -1,15 +1,12 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest, EMPTY, map, Observable, ReplaySubject, Subject, switchMap, take, takeUntil } from 'rxjs';
-import { FormBuilder, FormArray, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { combineLatest, EMPTY, map, Observable, ReplaySubject, takeUntil } from 'rxjs';
 import { Recipe } from '../../interfaces/recipe';
 import { selectRecipe } from '../../state/recipes/recipes.selectors';
 import { AsyncPipe, Location } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RecipeActions } from '../../state/recipes/recipes.actions';
-import { RecipeStep } from '../../interfaces/recipe-step';
 import { RecipeService } from '../../services/recipe.service';
-import { Measurement } from '../../interfaces/measurement';
 import { AvatarComponent } from '../../components/avatar/avatar.component';
 import { User } from '../../interfaces/user';
 import { selectLoggedInUser } from '../../state/users/users.selectors';
@@ -37,21 +34,18 @@ export class RecipeComponent implements OnInit, OnDestroy{
   editable$: Observable<boolean> = EMPTY;
   loggedInUser$: Observable<User | undefined> = EMPTY;
 
-  recipeId: number | null = null;
+  recipeId: number = -1;
   servings: number = 2;
 
   ngOnInit(): void {
+    this.recipeId = Number(this.route.snapshot.paramMap.get("id"));
 
-    this.loggedInUser$ = this.store.select(selectLoggedInUser);
+    this.loggedInUser$ = this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$));
+    this.recipe$ = this.store.select(selectRecipe(this.recipeId)).pipe(takeUntil(this.destroyed$))
 
-    this.recipe$ = this.route.paramMap.pipe(switchMap(params => {
-      this.recipeId = Number(params.get('id'));
-      return this.store.select(selectRecipe(this.recipeId))
-    }))
-
-    this.editable$ = combineLatest([this.recipe$, this.loggedInUser$]).pipe(takeUntil(this.destroyed$), map(([recipe, loggedInUser]) => {
-      return recipe?.createdBy.id === loggedInUser?.id;
-    }))
+    this.editable$ = combineLatest([this.recipe$, this.loggedInUser$]).pipe(
+      takeUntil(this.destroyed$), 
+      map(([recipe, loggedInUser]) => recipe?.createdBy.id === loggedInUser?.id))
   }
 
   editRecipe(){
@@ -59,7 +53,7 @@ export class RecipeComponent implements OnInit, OnDestroy{
   }
 
   deleteRecipe(){
-    this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipeId! }));
+    this.store.dispatch(RecipeActions.removeRecipe({ id: this.recipeId }));
     this.alertService.addAlert('Recipe was deleted!', AlertType.SUCCESS);
     this.location.back();
   }
@@ -74,5 +68,6 @@ export class RecipeComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 }

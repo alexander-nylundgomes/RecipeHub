@@ -6,7 +6,7 @@
 	
 			<div class="title-section d-flex flex-column row-gap-1" (click)="goToUser(user)">
 				<h6 class="m-0">{{ user.firstName }} {{ user.lastName }}</h6>
-				<p class="m-0 text-secondary lh-1 fs-7">&#64;janedoe</p>
+				<p class="m-0 text-secondary lh-1 fs-7">&#64;{{ user.handle }}</p>
 			</div>
 	
 			<button 

@@ -1,14 +1,12 @@
 import { Component, EventEmitter, Input, input, InputSignal, Output } from '@angular/core';
 import { RecipeCardComponent } from '../recipe-card/recipe-card.component';
 import { Recipe } from '../../interfaces/recipe';
-import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { IsLikedMap } from '../../interfaces/is-liked-map';
 
 @Component({
   selector: 'app-recipe-card-section',
   standalone: true,
-  imports: [RecipeCardComponent, AsyncPipe],
+  imports: [RecipeCardComponent],
   templateUrl: './recipe-card-section.component.html',
   styleUrl: './recipe-card-section.component.scss'
 })

@@ -1,23 +1,26 @@
 [
 	{
-		"firstName": "Alexander",
-		"lastName": "Nylund Gomes",
-		"email": "alex@outlook.com",
-		"id": 1,
-		"handle": "@myaccount12"
-	},
-	{
-		"firstName": "Alexander",
-		"lastName": "Nylund Gomes",
-		"email": "alex@outlook.com",
+		"firstName": "Carlos",
+		"lastName": "Martinez",
+		"email": "carlos.martinez@example.com",
 		"id": 2,
-		"handle": "@myaccount32"
+		"handle": "chefCarlos",
+		"bio": "Professional chef specializing in Latin fusion cuisine. Love to bring bold flavors and fresh ingredients together."
 	},
 	{
-		"firstName": "Alexander",
-		"lastName": "Nylund Gomes",
-		"email": "alex@outlook.com",
+		"firstName": "Anna",
+		"lastName": "Nguyen",
+		"email": "anna.nguyen@example.com",
 		"id": 3,
-		"handle": "@myaccount321"
+		"handle": "annacooks",
+		"bio": "Food blogger focused on quick, healthy meals for busy people. Recipes with fresh ingredients, low prep, and high flavor."
+	},
+	{
+		"firstName": "David",
+		"lastName": "Stevens",
+		"email": "david.stevens@example.com",
+		"id": 4,
+		"handle": "davidGrill",
+		"bio": "Weekend grill master and BBQ aficionado. Sharing tips on grilling, smoking meats, and creating savory marinades."
 	}
 ]

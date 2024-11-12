@@ -1,12 +1,9 @@
 import { Component, computed, effect, inject, OnDestroy, OnInit, Signal } from '@angular/core';
 import { ActivatedRoute, EventType, Router } from '@angular/router';
-import { pipe, ReplaySubject, switchMap, take, takeUntil, } from 'rxjs';
-import { UserService } from '../../services/user.service';
-import { User } from '../../interfaces/user';
-import { Actions, ofType } from '@ngrx/effects';
-import { UserApiActions } from '../../state/users/users.actions';
+import { filter, pipe, ReplaySubject, switchMap, take, takeUntil, } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { selectLoggedInUser } from '../../state/users/users.selectors';
+import { ofType } from '@ngrx/effects';
 
 interface FooterButton{
   icon: string, 
@@ -24,25 +21,22 @@ interface FooterButton{
 })
 export class FooterComponent implements OnInit, OnDestroy{
 
-  actions$: Actions = inject(Actions);
   store: Store = inject(Store);
-  userService: UserService = inject(UserService);
   router: Router = inject(Router);
 
   destroyed$: ReplaySubject<boolean> = new ReplaySubject<boolean>();
 
   buttons: FooterButton[] = [];
 
-
   ngOnInit(): void {
-    this.router.events.pipe(takeUntil(this.destroyed$)).subscribe((event) => {
-      if(event.type == EventType.NavigationEnd){
-        this.buttons.forEach((button) => {
-          button.selected = button.url == this.router.url;
-        })
-      }
-    });
 
+    // Every time a router event of NavigationEnd fires, 
+    // we need to update what button should be activated
+    this.router.events.pipe(
+      filter(event => event.type == EventType.NavigationEnd), 
+      takeUntil(this.destroyed$)).subscribe(() => this.setActiveButton());
+
+    // When a user logs in, we must update the URLs of the buttons 
     this.store.select(selectLoggedInUser).pipe(takeUntil(this.destroyed$)).subscribe((user) => {
       this.buttons = [
         {icon: "bi-house-fill", text: "Home", selected: true, url: "/"},
@@ -51,9 +45,13 @@ export class FooterComponent implements OnInit, OnDestroy{
         {icon: "bi-person-fill", text: "Your profile", selected: false, url: `/user/${user?.id}`},
       ];
 
-      this.buttons.forEach((button) => {
-        button.selected = button.url == this.router.url;
-      })
+      this.setActiveButton();
+    })
+  }
+
+  setActiveButton(){
+    this.buttons.forEach((button) => {
+      button.selected = (button.url == this.router.url);
     })
   }
 
@@ -63,6 +61,7 @@ export class FooterComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.destroyed$.next(true);
+    this.destroyed$.complete();
   }
 
 }

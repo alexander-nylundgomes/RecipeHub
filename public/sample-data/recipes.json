@@ -3,6 +3,8 @@
         "id": 1,
         "title": "Pancakes",
         "description": "Fluffy and delicious pancakes perfect for breakfast.",
+        "estimatedCookingTime": "45 min",
+        "caloriesPerServing": 345,
         "ingredients": [
             {
                 "name": "Flour",
@@ -42,28 +44,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Mix Ingredients",
-                "longText": "Combine flour, milk, eggs, and melted butter in a bowl and whisk until smooth."
-            },
-            {
-                "shortText": "Cook",
-                "longText": "Pour batter onto a hot greased griddle. Cook until bubbles form, then flip and cook until golden."
-            }
+            "Combine flour, milk, eggs, and melted butter in a bowl and whisk until smooth.",
+            "Pour batter onto a hot greased griddle. Cook until bubbles form, then flip and cook until golden."
         ],
         "rating": 4.5,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
+            "firstName": "Emily",
+            "lastName": "Baker",
+            "email": "emily.baker@example.com",
             "id": 1,
-            "handle": "@johndoe"
+            "handle": "emilybakes",
+            "bio": "Passionate home baker and culinary experimenter. Sharing recipes for the perfect pastry and decadent desserts."
         }
     },
     {
         "id": 2,
         "title": "Spaghetti Carbonara",
         "description": "A classic Italian pasta dish made with eggs, cheese, pancetta, and pepper.",
+        "estimatedCookingTime": "30 min",
+        "caloriesPerServing": 400,
         "ingredients": [
             {
                 "name": "Spaghetti",
@@ -103,28 +102,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Cook Spaghetti",
-                "longText": "Boil spaghetti until al dente, then drain and set aside."
-            },
-            {
-                "shortText": "Prepare Sauce",
-                "longText": "Mix eggs and cheese in a bowl. Saut\u00e9 pancetta until crispy, add spaghetti, and stir in the egg mixture."
-            }
+            "Boil spaghetti until al dente, then drain and set aside.",
+            "Mix eggs and cheese in a bowl. Saut\u00e9 pancetta until crispy, add spaghetti, and stir in the egg mixture."
         ],
         "rating": 4.7,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "Isabella",
+            "lastName": "Rossi",
+            "email": "isabella.rossi@example.com",
+            "id": 5,
+            "handle": "bellaGourmet",
+            "bio": "Italian food lover with a passion for pasta, sauces, and all things Italian. Bringing family recipes to the table."
         }
     },
     {
         "id": 3,
         "title": "Chocolate Chip Cookies",
         "description": "Classic chocolate chip cookies with a crispy edge and chewy center.",
+        "estimatedCookingTime": "50 min",
+        "caloriesPerServing": 540,
         "ingredients": [
             {
                 "name": "Butter",
@@ -164,28 +160,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Mix Ingredients",
-                "longText": "Cream together butter and sugar, then add flour and chocolate chips until dough forms."
-            },
-            {
-                "shortText": "Bake",
-                "longText": "Place dough on a baking sheet and bake at 350\u00b0F for 10-12 minutes until golden."
-            }
+            "Cream together butter and sugar, then add flour and chocolate chips until dough forms.",
+            "Place dough on a baking sheet and bake at 350\u00b0F for 10-12 minutes until golden."
         ],
         "rating": 4.9,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "David",
+            "lastName": "Stevens",
+            "email": "david.stevens@example.com",
+            "id": 4,
+            "handle": "davidGrill",
+            "bio": "Weekend grill master and BBQ aficionado. Sharing tips on grilling, smoking meats, and creating savory marinades."
         }
     },
     {
         "id": 4,
         "title": "Chicken Alfredo",
         "description": "Creamy and comforting chicken alfredo pasta.",
+        "estimatedCookingTime": "1 h 15 min",
+        "caloriesPerServing": 450,
         "ingredients": [
             {
                 "name": "Fettuccine",
@@ -225,28 +218,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Cook Fettuccine",
-                "longText": "Boil the fettuccine until al dente, drain and set aside."
-            },
-            {
-                "shortText": "Prepare Sauce",
-                "longText": "Cook chicken and slice, then simmer with cream and Parmesan cheese until thickened. Add pasta and mix."
-            }
+            "Boil the fettuccine until al dente, drain and set aside.",
+            "Cook chicken and slice, then simmer with cream and Parmesan cheese until thickened. Add pasta and mix."
         ],
         "rating": 4.6,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "Mike",
+            "lastName": "Chen",
+            "email": "mike.chen@example.com",
+            "id": 6,
+            "handle": "spicyMike",
+            "bio": "Asian cuisine enthusiast, with a love for spicy dishes and unique flavor combinations. Exploring dishes from all over Asia."
         }
     },
     {
         "id": 5,
         "title": "Vegetable Stir Fry",
         "description": "A healthy vegetable stir fry with a mix of colorful veggies.",
+        "estimatedCookingTime": "1 h 25 min",
+        "caloriesPerServing": 270,
         "ingredients": [
             {
                 "name": "Broccoli",
@@ -286,28 +276,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Prepare Veggies",
-                "longText": "Chop broccoli, bell peppers, and carrots into bite-sized pieces."
-            },
-            {
-                "shortText": "Stir Fry",
-                "longText": "Saut\u00e9 vegetables in a pan with oil and soy sauce until tender."
-            }
+            "Chop broccoli, bell peppers, and carrots into bite-sized pieces.",
+            "Saut\u00e9 vegetables in a pan with oil and soy sauce until tender."
         ],
         "rating": 4.4,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "Mike",
+            "lastName": "Chen",
+            "email": "mike.chen@example.com",
+            "id": 6,
+            "handle": "spicyMike",
+            "bio": "Asian cuisine enthusiast, with a love for spicy dishes and unique flavor combinations. Exploring dishes from all over Asia."
         }
     },
     {
         "id": 6,
         "title": "Banana Bread",
         "description": "Moist and delicious banana bread.",
+        "estimatedCookingTime": "1 h 45 min",
+        "caloriesPerServing": 450,
         "ingredients": [
             {
                 "name": "Bananas",
@@ -347,28 +334,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Prepare Batter",
-                "longText": "Mash bananas and mix with flour, sugar, and melted butter."
-            },
-            {
-                "shortText": "Bake",
-                "longText": "Pour into a loaf pan and bake at 350\u00b0F for 50 minutes."
-            }
+            "Mash bananas and mix with flour, sugar, and melted butter.",
+            "Pour into a loaf pan and bake at 350\u00b0F for 50 minutes."
         ],
         "rating": 4.8,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
+            "firstName": "Carlos",
+            "lastName": "Martinez",
+            "email": "carlos.martinez@example.com",
             "id": 2,
-            "handle": "@janesmith"
+            "handle": "chefCarlos",
+            "bio": "Professional chef specializing in Latin fusion cuisine. Love to bring bold flavors and fresh ingredients together."
         }
     },
     {
         "id": 7,
         "title": "Caesar Salad",
         "description": "Classic Caesar salad with crisp romaine, croutons, and Caesar dressing.",
+        "estimatedCookingTime": "25 min",
+        "caloriesPerServing": 175,
         "ingredients": [
             {
                 "name": "Romaine Lettuce",
@@ -408,24 +392,24 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Assemble Salad",
-                "longText": "Chop lettuce and mix with Parmesan, croutons, and Caesar dressing."
-            }
+            "Chop lettuce and mix with Parmesan, croutons, and Caesar dressing."
         ],
         "rating": 4.3,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "Anna",
+            "lastName": "Nguyen",
+            "email": "anna.nguyen@example.com",
+            "id": 3,
+            "handle": "annacooks",
+            "bio": "Food blogger focused on quick, healthy meals for busy people. Recipes with fresh ingredients, low prep, and high flavor."
         }
     },
     {
         "id": 8,
         "title": "Beef Tacos",
         "description": "Mexican-style tacos with seasoned ground beef and toppings.",
+        "estimatedCookingTime": "55 min",
+        "caloriesPerServing": 475,
         "ingredients": [
             {
                 "name": "Ground Beef",
@@ -465,28 +449,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Cook Beef",
-                "longText": "Saut\u00e9 ground beef with taco seasoning until browned."
-            },
-            {
-                "shortText": "Assemble Tacos",
-                "longText": "Fill taco shells with beef, lettuce, and cheese."
-            }
+            "Saut\u00e9 ground beef with taco seasoning until browned.",
+            "Fill taco shells with beef, lettuce, and cheese."
         ],
         "rating": 4.7,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "David",
+            "lastName": "Stevens",
+            "email": "david.stevens@example.com",
+            "id": 4,
+            "handle": "davidGrill",
+            "bio": "Weekend grill master and BBQ aficionado. Sharing tips on grilling, smoking meats, and creating savory marinades."
         }
     },
     {
         "id": 9,
         "title": "Garlic Butter Shrimp",
         "description": "Quick and easy garlic butter shrimp.",
+        "estimatedCookingTime": "1 h 10 min",
+        "caloriesPerServing": 375,
         "ingredients": [
             {
                 "name": "Shrimp",
@@ -517,24 +498,24 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Saut\u00e9 Shrimp",
-                "longText": "Cook shrimp with garlic in butter until pink and tender."
-            }
+            "Cook shrimp with garlic in butter until pink and tender."
         ],
         "rating": 4.6,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "Isabella",
+            "lastName": "Rossi",
+            "email": "isabella.rossi@example.com",
+            "id": 5,
+            "handle": "bellaGourmet",
+            "bio": "Italian food lover with a passion for pasta, sauces, and all things Italian. Bringing family recipes to the table."
         }
     },
     {
         "id": 10,
         "title": "French Toast",
         "description": "Golden and crispy French toast, perfect for breakfast.",
+        "estimatedCookingTime": "45 min",
+        "caloriesPerServing": 225,
         "ingredients": [
             {
                 "name": "Bread",
@@ -574,28 +555,25 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Prepare Mixture",
-                "longText": "Whisk eggs, milk, and cinnamon together in a bowl."
-            },
-            {
-                "shortText": "Cook Toast",
-                "longText": "Dip bread slices into the mixture and cook on a skillet until golden brown on both sides."
-            }
+            "Whisk eggs, milk, and cinnamon together in a bowl.",
+            "Dip bread slices into the mixture and cook on a skillet until golden brown on both sides."
         ],
         "rating": 4.8,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "Emily",
+            "lastName": "Baker",
+            "email": "emily.baker@example.com",
+            "id": 1,
+            "handle": "emilybakes",
+            "bio": "Passionate home baker and culinary experimenter. Sharing recipes for the perfect pastry and decadent desserts."
         }
     },
     {
         "id": 11,
         "title": "Pesto Pasta",
         "description": "Simple and delicious pasta tossed in fresh basil pesto.",
+        "estimatedCookingTime": "25 min",
+        "caloriesPerServing": 185,
         "ingredients": [
             {
                 "name": "Pasta",
@@ -653,32 +631,26 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Cook Pasta",
-                "longText": "Boil pasta in salted water until al dente, then drain."
-            },
-            {
-                "shortText": "Make Pesto",
-                "longText": "Blend basil, pine nuts, Parmesan, garlic, and olive oil in a food processor until smooth."
-            },
-            {
-                "shortText": "Combine and Serve",
-                "longText": "Toss pasta with pesto sauce until well coated. Serve with additional Parmesan on top if desired."
-            }
+            "Boil pasta in salted water until al dente, then drain.",
+            "Blend basil, pine nuts, Parmesan, garlic, and olive oil in a food processor until smooth.",
+            "Toss pasta with pesto sauce until well coated. Serve with additional Parmesan on top if desired."
         ],
         "rating": 4.7,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "David",
+            "lastName": "Stevens",
+            "email": "david.stevens@example.com",
+            "id": 4,
+            "handle": "davidGrill",
+            "bio": "Weekend grill master and BBQ aficionado. Sharing tips on grilling, smoking meats, and creating savory marinades."
         }
     },
     {
         "id": 12,
         "title": "Margherita Pizza",
         "description": "Classic Margherita pizza with fresh mozzarella, tomatoes, and basil.",
+        "estimatedCookingTime": "35 min",
+        "caloriesPerServing": 375,
         "ingredients": [
             {
                 "name": "Pizza Dough",
@@ -718,33 +690,27 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Preheat Oven",
-                "longText": "Preheat oven to 475\u00b0F (245\u00b0C)."
-            },
-            {
-                "shortText": "Assemble Pizza",
-                "longText": "Spread tomato sauce over dough, add mozzarella and basil."
-            },
-            {
-                "shortText": "Bake",
-                "longText": "Bake for 10-12 minutes until crust is golden and cheese is bubbly."
-            }
+            "Preheat oven to 475\u00b0F (245\u00b0C).",
+            "Spread tomato sauce over dough, add mozzarella and basil.",
+            "Bake for 10-12 minutes until crust is golden and cheese is bubbly."
         ],
-        "isLiked": true,
+        
         "rating": 4.8,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "Anna",
+            "lastName": "Nguyen",
+            "email": "anna.nguyen@example.com",
+            "id": 3,
+            "handle": "annacooks",
+            "bio": "Food blogger focused on quick, healthy meals for busy people. Recipes with fresh ingredients, low prep, and high flavor."
         }
     },
     {
         "id": 13,
         "title": "Tiramisu",
         "description": "A classic Italian dessert made with coffee-soaked ladyfingers and mascarpone cream.",
+        "estimatedCookingTime": "1 h 45 min",
+        "caloriesPerServing": 550,
         "ingredients": [
             {
                 "name": "Ladyfingers",
@@ -784,33 +750,26 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Prepare Coffee",
-                "longText": "Brew espresso and let cool."
-            },
-            {
-                "shortText": "Layer Ingredients",
-                "longText": "Dip ladyfingers in espresso, layer with mascarpone mixture, and repeat."
-            },
-            {
-                "shortText": "Chill and Serve",
-                "longText": "Refrigerate for 4 hours, sprinkle cocoa powder on top before serving."
-            }
+            "Brew espresso and let cool.",
+            "Dip ladyfingers in espresso, layer with mascarpone mixture, and repeat.",
+            "Refrigerate for 4 hours, sprinkle cocoa powder on top before serving."
         ],
-        "isLiked": true,
         "rating": 4.9,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
+            "firstName": "Carlos",
+            "lastName": "Martinez",
+            "email": "carlos.martinez@example.com",
             "id": 2,
-            "handle": "@janesmith"
+            "handle": "chefCarlos",
+            "bio": "Professional chef specializing in Latin fusion cuisine. Love to bring bold flavors and fresh ingredients together."
         }
     },
     {
         "id": 14,
         "title": "Greek Salad",
         "description": "A fresh and vibrant salad with cucumbers, tomatoes, olives, and feta.",
+        "estimatedCookingTime": "15 min",
+        "caloriesPerServing": 155,
         "ingredients": [
             {
                 "name": "Cucumber",
@@ -850,33 +809,27 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Chop Vegetables",
-                "longText": "Chop cucumber and tomatoes into bite-sized pieces."
-            },
-            {
-                "shortText": "Assemble Salad",
-                "longText": "Combine cucumber, tomatoes, olives, and feta in a bowl and mix."
-            },
-            {
-                "shortText": "Serve",
-                "longText": "Drizzle with olive oil and sprinkle with salt to taste before serving."
-            }
+            "Chop cucumber and tomatoes into bite-sized pieces.",
+            "Combine cucumber, tomatoes, olives, and feta in a bowl and mix.",
+            "Drizzle with olive oil and sprinkle with salt to taste before serving."
         ],
-        "isLiked": false,
+        
         "rating": 4.5,
         "createdBy": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "email": "john@example.com",
-            "id": 1,
-            "handle": "@johndoe"
+            "firstName": "Isabella",
+            "lastName": "Rossi",
+            "email": "isabella.rossi@example.com",
+            "id": 5,
+            "handle": "bellaGourmet",
+            "bio": "Italian food lover with a passion for pasta, sauces, and all things Italian. Bringing family recipes to the table."
         }
     },
     {
         "id": 15,
         "title": "Avocado Toast",
         "description": "Quick and easy avocado toast with a sprinkle of chili flakes.",
+        "estimatedCookingTime": "10 min",
+        "caloriesPerServing": 225,
         "ingredients": [
             {
                 "name": "Bread",
@@ -916,27 +869,19 @@
             }
         ],
         "steps": [
-            {
-                "shortText": "Toast Bread",
-                "longText": "Toast the bread slice until golden brown."
-            },
-            {
-                "shortText": "Mash Avocado",
-                "longText": "Scoop avocado onto toast and mash with a fork."
-            },
-            {
-                "shortText": "Add Toppings",
-                "longText": "Sprinkle salt and chili flakes on top before serving."
-            }
+            "Toast the bread slice until golden brown.",
+            "Scoop avocado onto toast and mash with a fork.",
+            "Sprinkle salt and chili flakes on top before serving."
         ],
-        "isLiked": true,
+        
         "rating": 4.6,
         "createdBy": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "email": "jane@example.com",
-            "id": 2,
-            "handle": "@janesmith"
+            "firstName": "Mike",
+            "lastName": "Chen",
+            "email": "mike.chen@example.com",
+            "id": 6,
+            "handle": "spicyMike",
+            "bio": "Asian cuisine enthusiast, with a love for spicy dishes and unique flavor combinations. Exploring dishes from all over Asia."
         }
     }
 ]
