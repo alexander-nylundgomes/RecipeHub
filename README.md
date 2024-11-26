@@ -21,8 +21,3 @@ To automate workflows, I integrated Azure DevOps, configuring two pipelines that
 
 ### Angular Signals
 RecipeHub is built on Angular 18, incorporating signals—a recent addition that enables a more responsive, reactive approach to data flow within Angular components.
-
-## Challenges and Solutions
-
-### Optimizing Recipe-Card Component Performance
-Initially, each recipe-card component independently handled like status checks, creating a potential performance bottleneck as the application scaled. To address this, I implemented a centralized IsLikedMap interface, which manages like statuses efficiently. Now, a single store subscription per page loads data, feeding boolean values through input signals to individual cards. This optimized approach significantly reduced component subscriptions and improved performance.
